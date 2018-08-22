@@ -1,0 +1,348 @@
+﻿<div class="container">
+  <div class="row">
+    <div class="col-lg-12">
+      <br>
+      <br>
+      <h2 class="text-center">Encuesta a empleadores <br>Sección 1.-Datos Generales</h2>
+      <br>
+      <br>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-lg-12">
+      <div class="card center">
+        <div class="body">
+          <div class="row">
+            <div class="col-lg-12">
+
+              <div class="form-group">
+                <h5>1.-Rango de edad</h5>
+                <div class="form-check">
+                  <input required [(ngModel)]="userResponse.RangoEdad" class="form-check-input" type="radio" name="edad" id="edad1" value="1" checked="checked"
+                  />
+                  <label class="form-check-label" for="edad1">
+                    25-35
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input required [(ngModel)]="userResponse.RangoEdad" class="form-check-input" type="radio" name="edad" id="edad2" value="2">
+                  <label class="form-check-label" for="edad2">
+                    36-45
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input required [(ngModel)]="userResponse.RangoEdad" class="form-check-input" type="radio" name="edad" id="edad3" value="3">
+                  <label class="form-check-label" for="edad3">
+                    46-55
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input required [(ngModel)]="userResponse.RangoEdad" class="form-check-input" type="radio" name="edad" id="edad4" value="4">
+                  <label class="form-check-label" for="edad4">
+                    Mayor de 56
+                  </label>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-lg-12">
+              <div class="form-group">
+                <h5>2.-Género</h5>
+                <div class="form-check">
+                  <input required [(ngModel)]="userResponse.Genero" class="form-check-input" type="radio" name="genero" id="genero" value="1" checked>
+                  <label class="form-check-label" for="genero">
+                    Masculino
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input required [(ngModel)]="userResponse.Genero" class="form-check-input" type="radio" name="genero" id="genero1" value="2">
+                  <label class="form-check-label" for="genero1">
+                    Femenino
+                  </label>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-lg-12">
+              <div class="form-group">
+                <h5>3.-Escolaridad</h5>
+                <div class="form-check">
+                  <input [(ngModel)]="userResponse.Escolaridad" class="form-check-input" type="radio" name="Escolaridad" id="Escolaridad1"
+                    value="1" checked>
+                  <label class="form-check-label" for="Escolaridad1">
+                    Preparatoria, bachillerato
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input [(ngModel)]="userResponse.Escolaridad" class="form-check-input" type="radio" name="Escolaridad" id="Escolaridad2"
+                    value="2" checked>
+                  <label class="form-check-label" for="Escolaridad2">
+                    Profesional (licenciatura, ingeniería, etc.)
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input [(ngModel)]="userResponse.Escolaridad" class="form-check-input" type="radio" name="Escolaridad" id="Escolaridad3"
+                    value="3">
+                  <label class="form-check-label" for="Escolaridad3">
+                    Maestría
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input [(ngModel)]="userResponse.Escolaridad" class="form-check-input" type="radio" name="Escolaridad" id="Escolaridad4"
+                    value="4">
+                  <label class="form-check-label" for="Escolaridad4">
+                    Doctorado
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input [(ngModel)]="userResponse.Escolaridad" class="form-check-input" type="radio" name="Escolaridad" id="Escolaridad5"
+                    value="5">
+                  <label class="form-check-label" for="Escolaridad5">
+                    Otro
+                  </label>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div *ngIf="requiresAreaSelect" class="row">
+            <div class="col-lg-4">
+              <div class="form-group">
+                <p>3.1.-Especificar área</p>
+                <select required [(ngModel)]="userResponse.EscolaridadProfesional" class="form-control">
+                  <option value="1">
+                    Agronómica
+                  </option>
+                  <option value="2">
+                    Agrícola
+                  </option>
+                  <option value="3">
+                    Agropecuaria
+                  </option>
+                  <option value="4">
+                    Forestal
+                  </option>
+                  <option value="5">
+                    Alimentos
+                  </option>
+                  <option value="6">
+                    Agroindustrial
+                  </option>
+                  <option value="7">
+                    Horticultura y floricultura
+                  </option>
+                  <option value="8">
+                    Economía agrícola
+                  </option>
+                  <option value="9">
+                    Administración de empresas agopecuarias
+                  </option>
+                  <option value="10">
+                    Medicina veterinaria
+                  </option>
+                  <option value="11">
+                    Zootecnia
+                  </option>
+                  <option value="12">
+                    Recursos marinos
+                  </option>
+                  <option value="13">
+                    Acuacultura
+                  </option>
+                  <option value="14">
+                    Otra
+                  </option>
+                </select>
+
+
+              </div>
+
+            </div>
+            <div *ngIf="requiresProfesionalSpecific" class="col-lg-4">
+              <div class="form-group">
+                <p>
+                  Especifique
+                </p>
+                <input class="form-control" type="text" [(ngModel)]="userResponse.EscolaridadProfesionalOtra" />
+              </div>
+            </div>
+          </div>
+          <div *ngIf="requiresAreaSpecific" class="row">
+            <div class="col-lg-12">
+              <div class="form-group">
+                <p>3.1.-Especificar área</p>
+                <input class="form-control" type="text" [(ngModel)]="userResponse.EscolaridadSpecifica" />
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-lg-12">
+              <div class="form-group">
+                <h5>4.-Su trabajo actual ¿a qué sector pertenece?:</h5>
+                <div class="form-check">
+                  <input class="form-check-input" [(ngModel)]="userResponse.Sector" type="radio" name="WorkSector" id="WorkSector" value="1"
+                    checked>
+                  <label class="form-check-label" for="WorkSector">
+                    Público Federal
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" [(ngModel)]="userResponse.Sector" type="radio" name="WorkSector" id="WorkSector2" value="2"
+                    checked>
+                  <label class="form-check-label" for="WorkSector2">
+                    Público Estatal
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" [(ngModel)]="userResponse.Sector" type="radio" name="WorkSector" id="WorkSector3" value="3"
+                    checked>
+                  <label class="form-check-label" for="WorkSector3">
+                    Público Municipal
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" [(ngModel)]="userResponse.Sector" type="radio" name="WorkSector" id="WorkSector4" value="4">
+                  <label class="form-check-label" for="WorkSector4">
+                    Privado
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" [(ngModel)]="userResponse.Sector" type="radio" name="WorkSector" id="WorkSector5" value="5">
+                  <label class="form-check-label" for="WorkSector5">
+                    Asociación Ganadera
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" [(ngModel)]="userResponse.Sector" type="radio" name="WorkSector" id="WorkSector6" value="6">
+                  <label class="form-check-label" for="WorkSector6">
+                    Asociación Acuícola
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" [(ngModel)]="userResponse.Sector" type="radio" name="WorkSector" id="WorkSector7" value="7">
+                  <label class="form-check-label" for="WorkSector7">
+                    Asociación Agrícola
+                  </label>
+                </div>
+
+                <div class="form-check">
+                  <input class="form-check-input" [(ngModel)]="userResponse.Sector" type="radio" name="WorkSector" id="WorkSector8" value="8">
+                  <label class="form-check-label" for="WorkSector8">
+                    Educativo Especificar
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" [(ngModel)]="userResponse.Sector" type="radio" name="WorkSector" id="WorkSector9" value="9">
+                  <label class="form-check-label" for="WorkSector9">
+                    Otro
+                  </label>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-12">
+              <div class="form-group">
+                <label for="Area">4.1.-Especificar área/ departamento:</label>
+                <textarea class="form-control" placeholder="área/ departamento" name="Area" [(ngModel)]="userResponse.Area" id="Area" rows="3"></textarea>
+              </div>
+            </div>
+          </div>
+          <button (click)="save()" [disabled]="saving" class="btn btn-primary btn-xs">{{saving ===true ? 'Guardando...':'Continuar'}}</button>
+        </div>
+        <br>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!--
+
+<div class="row">
+            <div class="col-lg-12">
+              <div class="form-group">
+                <h5>5.-En su organización ¿laboran empleados con estudios de posgrado?:</h5>
+                <div class="form-check">
+                  <input class="form-check-input" [(ngModel)]="userResponse.Posgrado" type="radio" name="posgrado" id="posgrado" value="1"
+                    checked>
+                  <label class="form-check-label" for="posgrado">
+                    Si
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" [(ngModel)]="userResponse.Posgrado" type="radio" name="posgrado" id="posgrado1" value="2">
+                  <label class="form-check-label" for="posgrado1">
+                    No
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" [(ngModel)]="userResponse.Posgrado" type="radio" name="posgrado" id="posgrado2" value="3">
+                  <label class="form-check-label" for="posgrado2">
+                    No se
+                  </label>
+                </div>
+
+
+
+              </div>
+            </div>
+            <div *ngIf="posgradoPorQue" class="col-lg-12">
+              <div class="form-group">
+                <label for="PosgradoPorQue">5.1.-Especifique por que</label>
+                <textarea class="form-control" placeholder="¿Por que?" name="PosgradoPorQue" [(ngModel)]="userResponse.PosgradoPorQue" id="PosgradoPorQue"
+                  rows="3"></textarea>
+                <p>
+                  * Escriba por que...
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-lg-12">
+              <div class="form-group">
+                <h5>6.-Interés por la Maestría</h5>
+                <p>
+                  ¿Estaría dispuesto a contratar a capital humano que cuenten con Maestría en Ciencias de la Sanidad y Producción Animal?
+                </p>
+
+                <span>
+                  6.1.-A corto plazo (Antes de un año)
+                </span><br>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" [(ngModel)]="userResponse.MaestriaCortoPlazo" type="radio" name="maestriaC" id="maestriaC"
+                    value="1" checked>
+                  <label class="form-check-label" for="exampleRadios1">
+                    Si
+                  </label>
+                </div>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" [(ngModel)]="userResponse.MaestriaCortoPlazo" type="radio" name="maestriaC" id="maestriaC1"
+                    value="2" checked>
+                  <label class="form-check-label" for="exampleRadios1">
+                    No
+                  </label>
+                </div>
+                <br>
+                <span>
+                  6.2.-A largo plazo (Más de un año)
+                </span><br>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" [(ngModel)]="userResponse.MaestriaLargoPlazo" type="radio" name="maestriaL" id="maestriaL"
+                    value="1" checked>
+                  <label class="form-check-label" for="maestriaL">
+                    Si
+                  </label>
+                </div>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" [(ngModel)]="userResponse.MaestriaLargoPlazo" type="radio" name="maestriaL" id="maestriaL"
+                    value="2">
+                  <label class="form-check-label" for="maestriaL1">
+                    No
+                  </label>
+                </div>
+              </div>
+            </div>
+          </div>
+
+-->

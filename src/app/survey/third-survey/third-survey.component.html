@@ -1,0 +1,42 @@
+﻿<div class="container">
+    <div class="row">
+      <div class="col-lg-12">
+        <br>
+        <br>
+        <h2 class="text-center">Encuesta a empleadores</h2>
+        <br>
+        <br>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-12">
+        <div class="card center">
+          <div class="body">
+            <div class="row">
+              <div class="col-lg-12">
+                <button class="btn btn-default btn-xs push-left" (click)="goBack()">Volver</button><br><br>
+              </div>
+            </div>
+            <hr>
+            <div class="row">
+              <div *ngFor="let item of groups" class="col-lg-12" style="margin-top:10px;">
+                <h5 style="font-weight: normal" [innerHTML]="item.question">
+  
+                </h5>
+                <div *ngFor="let opt of item.options;let i=index" class="form-check">
+                  <input class="form-check-input" type="checkbox" [(ngModel)]="opt.checked" [value]="opt.value" id="defaultCheck-{{item.id}}-{{i}}">
+                  <label class="form-check-label" for="defaultCheck-{{item.id}}-{{i}}">
+                    {{opt.name}}
+                  </label>
+                </div>
+              </div>
+            </div>
+            <hr>
+          </div>
+          <br>
+          <button (click)="save()" [disabled]="saving" class="btn btn-success btn-xs">{{saving ===true ? 'Guardando...':'Finalizar'}}</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  

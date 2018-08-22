@@ -1,0 +1,21 @@
+/* You can add global styles to this file, and also import other style files */
+.card {
+  padding: 20px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+  background-color: white;
+  button {
+    width: 25%;
+  }
+  margin-bottom: 40px !important;
+}
+.center {
+  width: 80%;
+  margin: 0 auto;
+}
+.vertical {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 60%;
+}

@@ -1,0 +1,66 @@
+﻿<div class="col-lg-12" [ngClass]="this.question.colSize" [formGroup]="form">
+
+    <div [ngSwitch]="question.controlType">
+        <!--INPUT TEXT-->
+        <div *ngSwitchCase="'textbox'">
+            <div class="form-group form-float">
+                <div class="form-line">
+                    <input class="validate form-control" [formControlName]="question.key" [id]="question.key" [type]="question.type">
+                    <label class="form-label" [attr.for]="question.key">{{question.label}}</label>
+                </div>
+            </div>
+        </div>
+        <!--!INPUT TEXT-->
+        <!--INPUT TEXTAREA-->
+        <div *ngSwitchCase="'textarea'">
+            <div class="form-group form-float">
+                <div class="form-line">
+                    <textarea class="validate form-control" [formControlName]="question.key" [id]="question.key"></textarea>
+                    <label class="form-label" [attr.for]="question.key">{{question.label}}</label>
+                </div>
+            </div>
+        </div>
+        <!--!INPUT TEXTAREA-->
+        <!--INPUT DROPDOWN-->
+        <div *ngSwitchCase="'dropdown'">
+            <div class="form-group form-float">
+                <div class="form-line">
+                    <select class="validate form-control" [id]="question.key" [formControlName]="question.key">
+                        <option *ngFor="let opt of question.options" [value]="opt.value">{{opt.displayName}}</option>
+                    </select>
+                    <label class="form-label" [attr.for]="question.key">{{question.label}}</label>
+                </div>
+            </div>
+        </div>
+        <!--!INPUT DROPDOWN-->
+        <!--INPUT CHECKBOX-->
+        <div *ngSwitchCase="'checkbox'" class="">
+            <div class="">
+                <input [id]="question.key" checked [formControlName]="question.key" class="validate form-control" type="checkbox">
+                <label class="form-label" for="{{question.key}}" [attr.for]="question.key">{{question.label}}</label>
+            </div>
+        </div>
+        <!--!INPUT CHECKBOX-->
+        <!--INPUT CHECKBOXGRP-->
+        <div *ngSwitchCase="'checkboxgrp'" class="">
+            <h4>{{question.label}}</h4>
+            <div *ngFor="let opt of question.options.checkboxes">
+                <input [id]="opt.key" [formControlName]="opt.key" class="validate form-control" type="checkbox">
+                <label class="form-label" for="{{opt.key}}" [attr.for]="opt.key">{{opt.displayName}}</label>
+            </div>
+        </div>
+
+        <!--!INPUT CHECKBOXGRP-->
+        <!--INPUT RADIOGRP-->
+        <div *ngSwitchCase="'radiogrp'">
+            <h4>{{question.label}}</h4>
+            <div *ngFor="let opt of question.options.radios">
+                <input value="{{opt.value}}" [formControlName]="question.key" type="radio" id="radio_{{opt.key}}" class="radio-col-red with-gap"
+                />
+                <label for="radio_{{opt.key}}">{{opt.displayName}}</label>
+            </div>
+        </div>
+        <!--!INPUT RADIOGRP-->
+    </div>
+    <div class="errorMessage" *ngIf="!isValid">{{question.label}} es requerido</div>
+</div>
