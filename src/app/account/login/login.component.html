@@ -8,12 +8,12 @@
     <form (ngSubmit)="login()">
       <div class="form-group">
         <label>Dirección de correo</label>
-        <input [(ngModel)]="user.email" name="email" type="email" class="form-control" placeholder="Enter email">
+        <input required="required" [(ngModel)]="user.email" name="email" type="email" class="form-control" placeholder="Enter email">
         <small id="emailHelp" class="form-text text-muted">Su correo electronico no sera compartido con nadie</small>
       </div>
       <div class="form-group">
         <label for="exampleInputPassword1">Contraseña</label>
-        <input type="password" name="password" [(ngModel)]="user.password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+        <input required="required" type="password" name="password" [(ngModel)]="user.password" class="form-control" id="exampleInputPassword1" placeholder="Password">
       </div>
       <br>
       <button type="submit" [disabled]="loading" class="btn btn-primary">{{loading === true ? 'Iniciando...':'Iniciar Sesión'}}</button>

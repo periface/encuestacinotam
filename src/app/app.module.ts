@@ -12,14 +12,19 @@ import { AngularFireAuthModule } from 'angularfire2/auth';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { SurveyModule } from './survey/survey.module';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
+import { SurveyTwoModule } from './survey-two/survey-two.module';
+import { UsersComponent } from './users/users.component';
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent, UsersComponent],
+  entryComponents: [UsersComponent],
+
   imports: [
     BrowserModule,
     AppRoutingModule,
     NgbModule,
     AccountModule,
     SurveyModule,
+    SurveyTwoModule,
     AngularFireModule.initializeApp(environment.fireabase),
     AngularFirestoreModule, // imports firebase/firestore, only needed for database features
     AngularFireAuthModule, // imports firebase/auth, only needed for auth features,,

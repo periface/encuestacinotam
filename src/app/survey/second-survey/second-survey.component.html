@@ -14,6 +14,7 @@
         <div class="body">
           <div class="row">
             <div class="col-lg-12">
+              <button class="btn btn-default btn-xs push-left" (click)="goBack()">Volver</button><br><br>
               <div class="form-group">
                 <h5>5.-En su organización ¿laboran empleados con estudios de posgrado?:</h5>
                 <div class="form-check">
@@ -97,6 +98,72 @@
               </div>
             </div>
           </div>
+
+          <div class="row">
+            <div *ngFor="let item of groups" class="col-lg-12" style="margin-top:10px;">
+              <h5 style="font-weight: normal" [innerHTML]="item.question">
+              </h5>
+              <div *ngFor="let opt of item.options;let i=index" class="form-check">
+                <input class="form-check-input" type="checkbox" [(ngModel)]="opt.checked" [value]="opt.value" id="defaultCheck-{{item.id}}-{{i}}">
+                <label class="form-check-label" for="defaultCheck-{{item.id}}-{{i}}">
+                  {{opt.name}}
+                </label>
+              </div>
+            </div>
+          </div>
+
+
+          <div class="row">
+            <div class="col-lg-12">
+              <div class="form-group">
+                <h5 style="font-weight: normal">11. Marque una razón por lo que considera de utilidad contar con capital
+                  humano con estudios de Maestría en Ciencias de la Sanidad y Producción Animal con énfasis en Organismos
+                  acuáticos, Medicina Veterinaria y Tecnología de los productos pecuarios”</h5>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" [(ngModel)]="userResponse.Utilidad" value="1" id="utilidad1">
+                  <label class="form-check-label" for="utilidad1">
+                    Mejor toma de decisiones
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" [(ngModel)]="userResponse.Utilidad" value="2" id="utilidad2">
+                  <label class="form-check-label" for="utilidad2">
+                    Mayor especialización
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" [(ngModel)]="userResponse.Utilidad" value="3" id="utilidad3">
+                  <label class="form-check-label" for="utilidad3">
+                    Mejor desempeño laboral
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" [(ngModel)]="userResponse.Utilidad" value="4" id="utilidad4">
+                  <label class="form-check-label" for="utilidad4">
+                    Mayor conocimiento y preparación
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" [(ngModel)]="userResponse.Utilidad" value="5" id="utilidad5">
+                  <label class="form-check-label" for="utilidad4">
+                    Mayor competitividad
+                  </label>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-lg-12">
+              <div class="form-group">
+                <h5 style="font-weight: normal">12.-¿Qué recomendaciones haría usted a esta universidad para hacer pertinente
+                  nuestra oferta de posgrado?</h5>
+                <textarea class="form-control" [(ngModel)]="userResponse.Recomendaciones"></textarea>
+              </div>
+            </div>
+          </div>
+          <br><br>
+          <button (click)="save()" [disabled]="saving" class="btn btn-success btn-xs">{{saving ===true ? 'Guardando...':'Continuar'}}</button>
         </div>
       </div>
     </div>

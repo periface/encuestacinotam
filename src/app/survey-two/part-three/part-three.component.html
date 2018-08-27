@@ -1,0 +1,179 @@
+﻿<div *ngIf="userResponse" class="container">
+  <div class="row">
+    <div class="col-lg-12">
+      <br>
+      <br>
+      <h2 class="text-center">Encuesta a candidatos <br>Sección 3.-ESPECIALIDAD EN REPRODUCCIÓN ANIMAL</h2>
+      <p class="text-center">
+        Esta especialidad tiene el objetivo de formar especialistas con una educación original y multidisciplinaria que permita al
+        profesionista la profundización de los conocimientos en materia de reproducción animal.
+      </p>
+      <br>
+      <br>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-lg-12">
+      <div class="card center">
+        <div class="body">
+          <div class="row">
+            <div class="col-lg-12">
+              <button class="btn btn-default btn-xs push-left" (click)="goBack()">Volver</button><br><br>
+              <div class="form-group">
+                <h5>10.-Interés por la Maestría</h5>
+                <p>
+                  ¿Estaría dispuesto a inscribirse en un posgrado para realizar una Especialidad en Reproducción Animal?
+                </p>
+
+                <p>
+                  <strong>
+                    10.1 A corto plazo
+                  </strong>
+                </p>
+                <div class="form-check">
+                  <input class="form-check-input" [(ngModel)]="userResponse.InteresCortoPlazoAnimal" type="radio" name="InteresCortoPlazoAnimal"
+                    id="InteresCortoPlazoAnimal" value="1" checked>
+                  <label class="form-check-label" for="InteresCortoPlazoAnimal">
+                    Si
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" [(ngModel)]="userResponse.InteresCortoPlazoAnimal" type="radio" name="InteresCortoPlazoAnimal"
+                    id="InteresCortoPlazoAnimal1" value="2">
+                  <label class="form-check-label" for="InteresCortoPlazoAnimal1">
+                    No
+                  </label>
+                </div>
+                <p>
+                  <strong>
+                    10.2 A largo plazo
+                  </strong>
+                </p>
+                <div class="form-check">
+                  <input class="form-check-input" [(ngModel)]="userResponse.InteresLargoPlazoAnimal" type="radio" name="InteresLargoPlazoAnimal"
+                    id="InteresLargoPlazoAnimal" value="1" checked>
+                  <label class="form-check-label" for="InteresLargoPlazoAnimal">
+                    Si
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" [(ngModel)]="userResponse.InteresLargoPlazoAnimal" type="radio" name="InteresLargoPlazoAnimal1"
+                    id="InteresLargoPlazoAnimal1" value="2">
+                  <label class="form-check-label" for="InteresLargoPlazoAnimal1">
+                    No
+                  </label>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-lg-12">
+              <h5>10.3. Señale cuál de las siguientes razones explica el porqué de su respuesta a la pregunta anterior.</h5>
+            </div>
+          </div>
+          <div class="row">
+            <div *ngFor="let item of groupsReasons" class="col-lg-12" style="margin-top:10px;">
+              <h6>{{item.name}}</h6>
+              <div *ngFor="let opt of item.options;let i=index" class="form-check">
+                <input class="form-check-input" type="checkbox" [(ngModel)]="opt.checked" [value]="opt.value" id="reas-defaultCheck-{{item.id}}-{{i}}">
+                <label class="form-check-label" for="reas-defaultCheck-{{item.id}}-{{i}}">
+                  {{opt.name}}
+                </label>
+                <div style="display: inline;margin-left: 10px;" *ngIf="opt.isOther && opt.checked && item.id ===1">
+                  <input type="text" placeholder="especifique" [(ngModel)]="userResponse.ReasonsOtherAnimalSi" />
+                </div>
+                <div style="display: inline;margin-left: 10px;" *ngIf="opt.isOther && opt.checked && item.id ===2">
+                  <input type="text" placeholder="especifique" [(ngModel)]="userResponse.ReasonsOtherAnimalNo" />
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-lg-12">
+              <div class="form-group">
+                <h5>10.4 Disposición de tiempo para cursar sus estudios de maestría (Nota: solo si su respuesta fue afirmativa
+                  en la preg. 10)</h5>
+                <label class="control-label">
+                  Entre semana
+                </label>
+                <input type="text" [(ngModel)]="userResponse.DisposicionEntreSemanaAnimal" class="form-control" />
+                <label class="control-label">
+                  Fin de semana
+                </label>
+                <input type="text" [(ngModel)]="userResponse.DisposicionFinDeSemanaAnimal" class="form-control" />
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-lg-12">
+              <div class="form-group">
+                <h5>10.5 En qué horario podría cursar sus estudios de maestría (Nota: solo si su respuesta fue afirmativa
+                  en la preg. 10)</h5>
+                <div class="form-check">
+                  <input required [(ngModel)]="userResponse.HorarioAnimal" class="form-check-input" type="radio" name="HorarioAnimal" id="HorarioAnimal"
+                    value="1">
+                  <label class="form-check-label" for="HorarioAnimal">
+                    Mañana
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input required [(ngModel)]="userResponse.HorarioAnimal" class="form-check-input" type="radio" name="HorarioAnimal" id="HorarioAnimal1"
+                    value="2">
+                  <label class="form-check-label" for="HorarioAnimal1">
+                    Tarde
+                  </label>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-lg-12">
+              <div class="form-group">
+                <h5>10.6 Modalidad para cubrir sus estudios de maestría (Nota: solo si su respuesta fue afirmativa en la
+                  preg. 10)
+                </h5>
+                <div class="form-check">
+                  <input required [(ngModel)]="userResponse.FinanciamentoAnimal" class="form-check-input" type="radio" name="FinanciamentoAnimal"
+                    id="FinanciamentoAnimal" value="1">
+                  <label class="form-check-label" for="FinanciamentoAnimal">
+                    Beca
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input required [(ngModel)]="userResponse.FinanciamentoAnimal" class="form-check-input" type="radio" name="FinanciamentoAnimal"
+                    id="FinanciamentoAnimal1" value="2">
+                  <label class="form-check-label" for="FinanciamentoAnimal1">
+                    Recursos propios
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input required [(ngModel)]="userResponse.FinanciamentoAnimal" class="form-check-input" type="radio" name="FinanciamentoAnimal"
+                    id="FinanciamentoAnimal2" value="3">
+                  <label class="form-check-label" for="FinanciamentoAnimal2">
+                    Otro
+                  </label>
+                </div>
+                <label *ngIf="userResponse.FinanciamentoAnimal==='3'" class="control-label">
+                  Especifique
+                </label>
+                <input type="text" [(ngModel)]="userResponse.FinanciamentoOtroAnimal" *ngIf="userResponse.FinanciamentoAnimal==='3'" class="form-control"
+                />
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-lg-12">
+              <div class="form-group">
+                <h5>11.-¿Qué recomendaciones haría usted a esta universidad para hacer pertinente nuestra oferta de maestría?</h5>
+                <textarea class="form-control" [(ngModel)]="userResponse.RecomendacionesDos"></textarea>
+              </div>
+            </div>
+          </div>
+          <hr>
+        </div>
+        <br>
+        <button (click)="save()" [disabled]="saving" class="btn btn-success btn-xs">Finalizar</button>
+      </div>
+    </div>
+  </div>
+</div>

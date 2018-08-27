@@ -1,42 +1,165 @@
-﻿<div class="container">
-    <div class="row">
-      <div class="col-lg-12">
-        <br>
-        <br>
-        <h2 class="text-center">Encuesta a empleadores</h2>
-        <br>
-        <br>
-      </div>
+﻿<div *ngIf="userResponse" class="container">
+  <div class="row">
+    <div class="col-lg-12">
+      <br>
+      <br>
+      <h2 class="text-center">Encuesta a empleadores <br>Sección 3.-ESPECIALIDAD EN REPRODUCCIÓN ANIMAL</h2>
+      <p class="text-center">
+        Esta especialidad tiene el objetivo de formar especialistas con una educación original y multidisciplinaria que permita al
+        profesionista la profundización de los conocimientos en materia de reproducción animal.
+      </p>
+      <br>
+      <br>
     </div>
-    <div class="row">
-      <div class="col-lg-12">
-        <div class="card center">
-          <div class="body">
-            <div class="row">
-              <div class="col-lg-12">
-                <button class="btn btn-default btn-xs push-left" (click)="goBack()">Volver</button><br><br>
+  </div>
+  <div class="row">
+    <div class="col-lg-12">
+      <div class="card center">
+        <div class="body">
+          <div class="row">
+            <div class="col-lg-12">
+              <button class="btn btn-default btn-xs push-left" (click)="goBack()">Volver</button><br><br>
+            </div>
+          </div>
+          <hr>
+          <div class="row">
+            <div class="col-lg-12" style="margin-top:10px;">
+              <h5 style="font-weight: normal">
+                13.-En su organización ¿laboran empleados con estudios de posgrado afines a esta especialidad?:
+              </h5>
+              <div class="form-check">
+                <input class="form-check-input" [(ngModel)]="userResponse.EmpleadosConEspecialidad" type="radio" name="posgrado" id="posgrado"
+                  value="1" checked>
+                <label class="form-check-label" for="posgrado">
+                  Si
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" [(ngModel)]="userResponse.EmpleadosConEspecialidad" type="radio" name="posgrado" id="posgrado1"
+                  value="2">
+                <label class="form-check-label" for="posgrado1">
+                  No
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" [(ngModel)]="userResponse.EmpleadosConEspecialidad" type="radio" name="posgrado" id="posgrado2"
+                  value="3">
+                <label class="form-check-label" for="posgrado2">
+                  No se
+                </label>
               </div>
             </div>
-            <hr>
-            <div class="row">
-              <div *ngFor="let item of groups" class="col-lg-12" style="margin-top:10px;">
-                <h5 style="font-weight: normal" [innerHTML]="item.question">
-  
+          </div>
+          <hr>
+          <div class="row">
+            <div class="col-lg-12">
+              <div class="form-group">
+                <h5 style="font-weight: normal">
+                  14. ¿Estaría dispuesto a contratar a capital humano que cuenten con Especialidad en Reproducción Animal?
                 </h5>
-                <div *ngFor="let opt of item.options;let i=index" class="form-check">
-                  <input class="form-check-input" type="checkbox" [(ngModel)]="opt.checked" [value]="opt.value" id="defaultCheck-{{item.id}}-{{i}}">
-                  <label class="form-check-label" for="defaultCheck-{{item.id}}-{{i}}">
-                    {{opt.name}}
+                <span>
+                  14.1.-A corto plazo (Antes de un año)
+                </span><br>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" [(ngModel)]="userResponse.ContratarEmpleadosEspecialidadCortoPlazo" type="radio" name="maestriaC"
+                    id="maestriaC" value="1" checked>
+                  <label class="form-check-label" for="exampleRadios1">
+                    Si
+                  </label>
+                </div>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" [(ngModel)]="userResponse.ContratarEmpleadosEspecialidadCortoPlazo" type="radio" name="maestriaC"
+                    id="maestriaC1" value="2" checked>
+                  <label class="form-check-label" for="exampleRadios1">
+                    No
+                  </label>
+                </div>
+                <br>
+                <span>
+                  14.2.-A largo plazo (Más de un año)
+                </span><br>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" [(ngModel)]="userResponse.ContratarEmpleadosEspecialidadLargoPlazo" type="radio" name="maestriaL"
+                    id="maestriaL" value="1" checked>
+                  <label class="form-check-label" for="maestriaL">
+                    Si
+                  </label>
+                </div>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" [(ngModel)]="userResponse.ContratarEmpleadosEspecialidadLargoPlazo" type="radio" name="maestriaL"
+                    id="maestriaL" value="2">
+                  <label class="form-check-label" for="maestriaL1">
+                    No
                   </label>
                 </div>
               </div>
             </div>
-            <hr>
           </div>
-          <br>
-          <button (click)="save()" [disabled]="saving" class="btn btn-success btn-xs">{{saving ===true ? 'Guardando...':'Finalizar'}}</button>
+          <div *ngIf="groups" class="row">
+            <div *ngFor="let item of groups" class="col-lg-12" style="margin-top:10px;">
+              <h5 style="font-weight: normal" [innerHTML]="item.question">
+              </h5>
+              <div *ngFor="let opt of item.options;let i=index" class="form-check">
+                <input class="form-check-input" type="checkbox" [(ngModel)]="opt.checked" [value]="opt.value" id="defaultCheckelm-{{item.id}}-{{i}}">
+                <label class="form-check-label" for="defaultCheckelm-{{item.id}}-{{i}}">
+                  {{opt.name}}
+                </label>
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-lg-12">
+              <div class="form-group">
+                <h5 style="font-weight: normal">17. Marque una razón por lo que considera de utilidad contar con capital
+                  humano con estudios de “Especialidad en Reproducción Animal”</h5>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" [(ngModel)]="userResponse.UtilidadEspecialidad" value="1" id="utilidad1">
+                  <label class="form-check-label" for="utilidad1">
+                    Mejor toma de decisiones
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" [(ngModel)]="userResponse.UtilidadEspecialidad" value="2" id="utilidad2">
+                  <label class="form-check-label" for="utilidad2">
+                    Mayor especialización
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" [(ngModel)]="userResponse.UtilidadEspecialidad" value="3" id="utilidad3">
+                  <label class="form-check-label" for="utilidad3">
+                    Mejor desempeño laboral
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" [(ngModel)]="userResponse.UtilidadEspecialidad" value="4" id="utilidad4">
+                  <label class="form-check-label" for="utilidad4">
+                    Mayor conocimiento y preparación
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" [(ngModel)]="userResponse.UtilidadEspecialidad" value="5" id="utilidad5">
+                  <label class="form-check-label" for="utilidad4">
+                    Mayor competitividad
+                  </label>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-lg-12">
+              <div class="form-group">
+                <h5 style="font-weight: normal">12.-¿Qué recomendaciones haría usted a esta universidad para hacer pertinente
+                  nuestra oferta de posgrado?</h5>
+                <textarea class="form-control" [(ngModel)]="userResponse.RecomendacionesEspecialidad"></textarea>
+              </div>
+            </div>
+          </div>
+          <br><br>
         </div>
+        <br>
+        <button (click)="save()" [disabled]="saving" class="btn btn-success btn-xs">Finalizar</button>
       </div>
     </div>
   </div>
-  
+</div>

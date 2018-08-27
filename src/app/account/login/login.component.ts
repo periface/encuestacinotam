@@ -3,7 +3,7 @@ import { LoginModel } from './../models/login.model';
 import { AuthService } from './../../services/auth.service';
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 import { Utils } from '../../utils/utils';
 @Component({
   templateUrl: './login.component.html',
@@ -18,19 +18,24 @@ export class LoginComponent implements OnInit {
   constructor(
     private authService: AuthService,
     private router: Router,
-    private surveyService: SurveyService
+    private surveyService: SurveyService,
+    private activatedRoute: ActivatedRoute
   ) {
+    const survey = this.activatedRoute.snapshot.params.survey;
     this.authService.user.subscribe(usr => {
-      console.log(usr);
       if (usr) {
-        this.surveyService.getUserSurvey(usr.uid).then(snapShot => {
-          const data = Utils.snapshotToArray(snapShot);
-          if (!data.length) {
-            this.router.navigate(['survey']);
-          } else {
-            alert('Usted ya ha contestado esta encuesta...');
-          }
-        });
+        if (survey === 'encuesta') {
+          this.router.navigate(['encuesta']);
+        } else {
+          this.surveyService.getUserSurvey(usr.uid).then(snapShot => {
+            const data = Utils.snapshotToArray(snapShot);
+            if (!data.length) {
+              this.router.navigate(['survey']);
+            } else {
+              alert('Usted ya ha contestado esta encuesta...');
+            }
+          });
+        }
       }
     });
   }

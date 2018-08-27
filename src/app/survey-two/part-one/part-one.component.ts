@@ -1,36 +1,31 @@
-﻿import { Router } from '@angular/router';
-import { User } from 'firebase';
-import { AuthService } from './../../services/auth.service';
-import { SurveyService } from './../../services/survey.service';
-import { SurveyOne } from './../models/survey-one.model';
+﻿import { AuthService } from './../../services/auth.service';
+import { SurveyTwo } from './../models/survey-two.model';
 import { Component } from '@angular/core';
+import { User } from 'firebase';
+import { SurveyService } from '../../services/survey.service';
+import { Router } from '@angular/router';
 import { Utils } from '../../utils/utils';
 
 @Component({
-  templateUrl: './first-survey.component.html'
+  templateUrl: './part-one.component.html'
 })
-export class FirstSurveyComponent {
+export class PartOneComponent {
   user: User;
-  userResponse: SurveyOne = new SurveyOne();
+  userResponse: SurveyTwo = new SurveyTwo();
   saving: boolean;
   isPosgradoValidCheck: boolean;
-  /**
-   *
-   */
   constructor(
     private surveyService: SurveyService,
-    private authService: AuthService,
-    private router: Router
+    private router: Router,
+    private auth: AuthService
   ) {
-    this.authService.user.subscribe(usr => {
+    this.auth.user.subscribe(usr => {
       this.user = usr;
-      if (!this.user) {
-        this.router.navigate(['login']);
-      }
-      this.surveyService.getUserSurvey(this.user.uid).then(data => {
+      this.surveyService.getUserSurveyTwo(usr.uid).then(data => {
+        console.log(data);
         const arr = Utils.snapshotToArray(data);
         if (arr.length) {
-          this.userResponse = arr[0] as SurveyOne;
+          this.userResponse = arr[0] as SurveyTwo;
         }
       });
     });
@@ -39,22 +34,13 @@ export class FirstSurveyComponent {
     this.saving = true;
     this.userResponse.UserId = this.user.uid;
     this.userResponse.Email = this.user.email;
-    if (!this.IsAreaValid) {
-      alert('Área, "Pregunta 4.1" ');
-      this.saving = false;
-      return false;
-    }
-    if (!this.isPosgradoValid) {
-      alert('Especifique por que, "Pregunta 5.1" ');
-      this.saving = false;
-      this.userResponse.PosgradoPorQue = '';
-      return false;
-    }
     setTimeout(async () => {
-      await this.surveyService.saveSurvey(this.userResponse);
+      console.log(this.userResponse);
+      await this.surveyService.saveSurveyTwo(this.userResponse);
       this.saving = false;
-      this.router.navigate(['surveyTwo']);
+      this.router.navigate(['pasoDos']);
     }, 2000);
+    console.log(this.userResponse);
   }
   get isPosgradoValid(): boolean {
     if (
@@ -73,17 +59,17 @@ export class FirstSurveyComponent {
   }
 
   get requiresAreaSelect(): boolean {
-    return this.userResponse.Escolaridad === '2';
+    return this.userResponse.Escolaridad === '1';
   }
   get requiresAreaSpecific(): boolean {
     return (
-      this.userResponse.Escolaridad === '5' ||
+      this.userResponse.Escolaridad === '2' ||
       this.userResponse.Escolaridad === '3' ||
       this.userResponse.Escolaridad === '4'
     );
   }
   get requiresProfesionalSpecific(): boolean {
-    return this.userResponse.EscolaridadProfesional === '14';
+    return this.userResponse.EscolaridadProfesional === '2';
   }
   get IsAreaValid(): boolean {
     console.log(this.userResponse.Area);

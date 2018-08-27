@@ -24,4 +24,18 @@ export class AuthService {
   logout() {
     this.afAuth.auth.signOut();
   }
+  async addUsers(bulkData: any[]) {
+    for (let index = 0; index < bulkData.length; index++) {
+      try {
+        const element = bulkData[index];
+        const response = await this.afAuth.auth.createUserWithEmailAndPassword(
+          element,
+          '123qwe'
+        );
+        console.log(response);
+      } catch (err) {
+        console.log(err);
+      }
+    }
+  }
 }

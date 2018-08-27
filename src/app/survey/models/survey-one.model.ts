@@ -9,6 +9,7 @@
   MaestriaCortoPlazo: string;
   MaestriaLargoPlazo: string;
   Areas: any[];
+  Especialidad: any[];
   UserId: string;
   Email: string;
   key: string;
@@ -16,9 +17,15 @@
   EscolaridadSpecifica: string;
   EscolaridadProfesional: string;
   EscolaridadProfesionalOtra: string;
+  Recomendaciones: string;
+  Utilidad: string;
+  EmpleadosConEspecialidad: string;
+  ContratarEmpleadosEspecialidadCortoPlazo: string;
+  ContratarEmpleadosEspecialidadLargoPlazo: string;
+  UtilidadEspecialidad: string;
+  RecomendacionesEspecialidad: string;
   /**
    *
    */
-  constructor() {
-  }
+  constructor() {}
 }
