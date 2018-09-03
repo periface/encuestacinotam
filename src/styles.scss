@@ -19,3 +19,54 @@
   transform: translate(-50%, -50%);
   width: 60%;
 }
+.logo-container {
+  position: absolute;
+  left: 13%;
+  top: 5%;
+  transform: translate(-50%);
+}
+.logo-vet-container {
+  position: absolute;
+  right: 0;
+  top: 2%;
+  left: 75%;
+}
+.cintilla-container {
+  overflow: hidden;
+  max-width: 100%;
+  .cintilla-izquierda {
+    content: '';
+    height: 20px;
+    width: 35%;
+    margin-left: -2%;
+    transform: skew(-56deg);
+    background-color: #171796;
+    /* background-color: white; */
+    position: relative;
+    float: left;
+    z-index: 1;
+    border-radius: 25px;
+  }
+  .cintilla-derecha {
+    content: '';
+    height: 20px;
+    width: 75%;
+    transform: skew(-36deg);
+    background-color: #e75204;
+    /* background-color: white; */
+    position: relative;
+    float: right;
+    margin-right: -15%;
+    overflow: hidden;
+    z-index: 1;
+    border-radius: 25px;
+  }
+  .cintilla {
+    content: '';
+    height: 20px;
+    margin: 0;
+    background-color: white;
+    position: relative;
+    z-index: -9999;
+  }
+}

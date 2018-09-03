@@ -1,9 +1,11 @@
 ﻿.bg-container {
-  background: url(http://i.imgur.com/78OoIHG.gif);
+  // background: url(http://i.imgur.com/78OoIHG.gif);
   background-size: cover !important;
   height: 100vh !important;
   width: 100%;
 }
+
+
 * {
   margin: 0;
   height: auto;
@@ -15,12 +17,12 @@
   top: 20%;
   transform: translate(-50%, -10%);
   h1 {
-    color: white;
+    color: black;
     font-weight: 500;
   }
 }
 .form-control {
-  width: 100%!important;
+  width: 100% !important;
 }
 .login-container {
   position: absolute;
@@ -30,4 +32,10 @@
   padding: 20px;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
   background-color: white;
+}
+.disclaimer-container {
+  position: absolute;
+  left: 50%;
+  top: 75%;
+  transform: translate(-50%, -50%);
 }

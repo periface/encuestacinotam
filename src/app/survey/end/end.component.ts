@@ -3,6 +3,12 @@ import { AuthService } from 'src/app/services/auth.service';
 import { Router } from '@angular/router';
 @Component({
   template: `
+  <div class="cintilla-container">
+  <div class="cintilla-izquierda"></div>
+  <div class="cintilla-derecha"></div>
+  <div class="cintilla"></div>
+</div>
+<br>
       <div class="card center vertical">
         <h1 class="text-center">¡Muchas gracias por su colaboración!</h1>
         <p class="text-center">

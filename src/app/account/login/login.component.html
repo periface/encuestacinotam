@@ -1,4 +1,15 @@
-﻿<div class="bg-container"></div>
+﻿<div class="cintilla-container">
+  <div class="cintilla-izquierda"></div>
+  <div class="cintilla-derecha"></div>
+  <div class="cintilla"></div>
+</div>
+<div class="bg-container"></div>
+<div class="logo-container">
+  <img src="/assets/img/logouat.JPG" />
+</div>
+<div class="logo-vet-container">
+  <img src="/assets/img/logovet.JPG" />
+</div>
 <div class="title-container">
   <h1 class="text-center">Encuestas Cinotam</h1>
 </div>
@@ -13,10 +24,23 @@
       </div>
       <div class="form-group">
         <label for="exampleInputPassword1">Contraseña</label>
-        <input required="required" type="password" name="password" [(ngModel)]="user.password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+        <input required="required" type="password" name="password" [(ngModel)]="user.password" class="form-control" id="exampleInputPassword1"
+          placeholder="Password">
       </div>
       <br>
       <button type="submit" [disabled]="loading" class="btn btn-primary">{{loading === true ? 'Iniciando...':'Iniciar Sesión'}}</button>
+      <p class="help-block">
+        *Inicie sesión con su correo y la contraseña proporcionada.
+      </p>
     </form>
   </div>
+
+</div>
+<div class="disclaimer-container text-center">
+  <h3>
+    Universidad Autónoma de Tamaulipas
+  </h3>
+  <p>
+    © Todos los derechos reservados 2018
+  </p>
 </div>
