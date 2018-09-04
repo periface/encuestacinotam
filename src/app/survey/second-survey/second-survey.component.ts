@@ -49,12 +49,14 @@ export class SecondSurveyComponent implements OnInit {
     const data = [];
     for (let index = 0; index < this.groups.length; index++) {
       const element = this.groups[index];
-      const selected = element.options.filter(opt => opt.checked).map(opt => {
-        return {
-          value: opt.value,
-          name: opt.name
-        };
-      });
+      const selected = element.options
+        .filter(opt => opt.checked || opt.textbox)
+        .map(opt => {
+          return {
+            value: opt.value,
+            name: opt.name
+          };
+        });
       if (element.requiresOne && !selected.length) {
         alert('Por favor seleccione al menos una materia de ' + element.name);
         this.saving = false;

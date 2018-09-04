@@ -31,7 +31,7 @@
           <div class="row">
             <div class="col-lg-12" style="margin-top:10px;">
               <h5 style="font-weight: normal">
-                13.-En su organización ¿laboran empleados con estudios de posgrado afines a esta especialidad?:
+                16.-En su organización ¿laboran empleados con estudios de posgrado afines a esta especialidad?:
               </h5>
               <div class="form-check">
                 <input class="form-check-input" [(ngModel)]="userResponse.EmpleadosConEspecialidad" type="radio" name="posgrado" id="posgrado"
@@ -61,10 +61,10 @@
             <div class="col-lg-12">
               <div class="form-group">
                 <h5 style="font-weight: normal">
-                  14. ¿Estaría dispuesto a contratar a capital humano que cuenten con Especialidad en Reproducción Animal?
+                  17. ¿Estaría dispuesto a contratar a capital humano que cuenten con Especialidad en Reproducción Animal?
                 </h5>
                 <span>
-                  14.1.-A corto plazo (Antes de un año)
+                  17.1.-A corto plazo (Antes de un año)
                 </span><br>
                 <div class="form-check form-check-inline">
                   <input class="form-check-input" [(ngModel)]="userResponse.ContratarEmpleadosEspecialidadCortoPlazo" type="radio" name="maestriaC"
@@ -82,7 +82,7 @@
                 </div>
                 <br>
                 <span>
-                  14.2.-A largo plazo (Más de un año)
+                  17.2.-A largo plazo (Más de un año)
                 </span><br>
                 <div class="form-check form-check-inline">
                   <input class="form-check-input" [(ngModel)]="userResponse.ContratarEmpleadosEspecialidadLargoPlazo" type="radio" name="maestriaL"
@@ -105,11 +105,19 @@
             <div *ngFor="let item of groups" class="col-lg-12" style="margin-top:10px;">
               <h5 style="font-weight: normal" [innerHTML]="item.question">
               </h5>
-              <div *ngFor="let opt of item.options;let i=index" class="form-check">
-                <input class="form-check-input" type="checkbox" [(ngModel)]="opt.checked" [value]="opt.value" id="defaultCheckelm-{{item.id}}-{{i}}">
-                <label class="form-check-label" for="defaultCheckelm-{{item.id}}-{{i}}">
-                  {{opt.name}}
-                </label>
+              <div *ngFor="let opt of item.options;let i=index">
+                <div *ngIf="opt.textbox">
+                  <p>
+                    {{opt.name}}
+                  </p>
+                  <input class="form-control" type="textbox" [(ngModel)]="opt.value" [value]="opt.value" id="defaultCheck-{{item.id}}-{{i}}">
+                </div>
+                <div *ngIf="!opt.textbox" class="form-check">
+                  <input class="form-check-input" type="checkbox" [(ngModel)]="opt.checked" [value]="opt.value" id="defaultCheck-{{item.id}}-{{i}}">
+                  <label class="form-check-label" for="defaultCheck-{{item.id}}-{{i}}">
+                    {{opt.name}}
+                  </label>
+                </div>
               </div>
             </div>
           </div>
@@ -117,7 +125,7 @@
           <div class="row">
             <div class="col-lg-12">
               <div class="form-group">
-                <h5 style="font-weight: normal">17. Marque una razón por lo que considera de utilidad contar con capital
+                <h5 style="font-weight: normal">20. Marque una razón por lo que considera de utilidad contar con capital
                   humano con estudios de “Especialidad en Reproducción Animal”</h5>
                 <div class="form-check">
                   <input class="form-check-input" type="radio" [(ngModel)]="userResponse.UtilidadEspecialidad" value="1" id="utilidad1">
@@ -155,8 +163,8 @@
           <div class="row">
             <div class="col-lg-12">
               <div class="form-group">
-                <h5 style="font-weight: normal">12.-¿Qué recomendaciones haría usted a esta universidad para hacer pertinente
-                  nuestra oferta de posgrado?</h5>
+                <h5 style="font-weight: normal">21.-¿Qué recomendaciones haría usted a esta universidad para hacer pertinente
+                  nuestra oferta de Especialidad en Reproducción Animal?</h5>
                 <textarea class="form-control" [(ngModel)]="userResponse.RecomendacionesEspecialidad"></textarea>
               </div>
             </div>

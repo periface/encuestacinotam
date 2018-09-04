@@ -1,6 +1,6 @@
 ﻿export const HelpDataSp = [
   {
-    question: `15.-Señale de las siguientes materias del área básica o tronco común cuáles considera
+    question: `18.-Señale de las siguientes materias del área básica o tronco común cuáles considera
     relevantes en la formación de capital humano de la
     “Especialidad en Reproducción Animal” (puede elegir varias opciones).`,
     name: 'Área básica',
@@ -46,11 +46,16 @@
         name: 'Seminario bibliográfico II',
         value: '15H',
         checked: false
+      },
+      {
+        name: 'Otro',
+        value: '',
+        textbox: true
       }
     ]
   },
   {
-    question: `16. Señale de las siguientes materias de especialización cuáles
+    question: `19. Señale de las siguientes materias de especialización cuáles
     considera relevantes en la formación de capital humano en la “Especialidad en Reproducción Animal”
      (puede elegir varias opciones)`,
     name: 'Optativas',
@@ -75,6 +80,11 @@
         name: 'Temas selectos en reproducción',
         value: '16D',
         checked: false
+      },
+      {
+        name: 'Otro',
+        value: '',
+        textbox: true
       }
     ]
   }

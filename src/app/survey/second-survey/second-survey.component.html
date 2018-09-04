@@ -1,15 +1,20 @@
 ﻿<div class="cintilla-container">
-    <div class="cintilla-izquierda"></div>
-    <div class="cintilla-derecha"></div>
-    <div class="cintilla"></div>
-  </div>
-  <br>
+  <div class="cintilla-izquierda"></div>
+  <div class="cintilla-derecha"></div>
+  <div class="cintilla"></div>
+</div>
+<br>
 <div *ngIf="userResponse" class="container">
   <div class="row">
     <div class="col-lg-12">
       <br>
       <br>
-      <h2 class="text-center">Encuesta a empleadores <br>Sección 2.-Maestría en Ciencias de la Sanidad y Producción Animal</h2>
+      <h2 class="text-center">Encuesta a empleadores <br>Sección 2.-Maestría en Ciencias en Sanidad y Producción Animal</h2>
+      <p>
+        Esta maestría tiene el objetivo de formar capital humano competente en las áreas prioritarias y emergentes en la medicina
+        veterinaria y en la producción de alimentos de origen animal. La maestría tiene diferentes áreas temáticas: medicina
+        veterinaria, organismos acuáticos y producción y tecnología de los productos pecuarios.
+      </p>
       <br>
       <br>
     </div>
@@ -22,7 +27,7 @@
             <div class="col-lg-12">
               <button class="btn btn-default btn-xs push-left" (click)="goBack()">Volver</button><br><br>
               <div class="form-group">
-                <h5>5.-En su organización ¿laboran empleados con estudios de posgrado?:</h5>
+                <h5>6.-En su organización ¿laboran empleados con estudios de posgrado?:</h5>
                 <div class="form-check">
                   <input class="form-check-input" [(ngModel)]="userResponse.Posgrado" type="radio" name="posgrado" id="posgrado" value="1"
                     checked>
@@ -49,7 +54,7 @@
             </div>
             <div *ngIf="posgradoPorQue" class="col-lg-12">
               <div class="form-group">
-                <label for="PosgradoPorQue">5.1.-Especifique por que</label>
+                <label for="PosgradoPorQue">Especifique por que</label>
                 <textarea class="form-control" placeholder="¿Por que?" name="PosgradoPorQue" [(ngModel)]="userResponse.PosgradoPorQue" id="PosgradoPorQue"
                   rows="3"></textarea>
                 <p>
@@ -61,13 +66,10 @@
           <div class="row">
             <div class="col-lg-12">
               <div class="form-group">
-                <h5>6.-Interés por la Maestría</h5>
-                <p>
-                  ¿Estaría dispuesto a contratar a capital humano que cuenten con Maestría en Ciencias de la Sanidad y Producción Animal?
-                </p>
-
+                <h5>7.-¿Estaría dispuesto a contratar a capital humano que cuenten con Maestría en Ciencias de la Sanidad
+                  y Producción Animal?</h5>
                 <span>
-                  6.1.-A corto plazo (Antes de un año)
+                  7.1.-A corto plazo (Antes de un año)
                 </span><br>
                 <div class="form-check form-check-inline">
                   <input class="form-check-input" [(ngModel)]="userResponse.MaestriaCortoPlazo" type="radio" name="maestriaC" id="maestriaC"
@@ -85,7 +87,7 @@
                 </div>
                 <br>
                 <span>
-                  6.2.-A largo plazo (Más de un año)
+                  7.2.-A largo plazo (Más de un año)
                 </span><br>
                 <div class="form-check form-check-inline">
                   <input class="form-check-input" [(ngModel)]="userResponse.MaestriaLargoPlazo" type="radio" name="maestriaL" id="maestriaL"
@@ -105,15 +107,153 @@
             </div>
           </div>
 
+
+
+
+          <div class="row">
+            <div class="col-lg-12">
+              <div class="form-group">
+                <h5>8.-Especie animal de interés</h5>
+                <div class="form-check">
+                  <input class="form-check-input" [(ngModel)]="userResponse.AnimalInteres" type="radio" name="AnimalInteres" id="AnimalInteres"
+                    value="1" checked>
+                  <label class="form-check-label" for="AnimalInteres">
+                    Animales de Compañia
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" [(ngModel)]="userResponse.AnimalInteres" type="radio" name="AnimalInteres" id="AnimalInteres1"
+                    value="2">
+                  <label class="form-check-label" for="AnimalInteres1">
+                    Aves
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" [(ngModel)]="userResponse.AnimalInteres" type="radio" name="AnimalInteres" id="AnimalInteres2"
+                    value="3">
+                  <label class="form-check-label" for="AnimalInteres2">
+                    Bovinos
+                  </label>
+                </div>
+
+                <div class="form-check">
+                  <input class="form-check-input" [(ngModel)]="userResponse.AnimalInteres" type="radio" name="AnimalInteres" id="AnimalInteres3"
+                    value="4">
+                  <label class="form-check-label" for="AnimalInteres3">
+                    Cerdos
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" [(ngModel)]="userResponse.AnimalInteres" type="radio" name="AnimalInteres" id="AnimalInteres4"
+                    value="5">
+                  <label class="form-check-label" for="AnimalInteres4">
+                    Caprinos
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" [(ngModel)]="userResponse.AnimalInteres" type="radio" name="AnimalInteres" id="AnimalInteres5"
+                    value="6">
+                  <label class="form-check-label" for="AnimalInteres5">
+                    Equinos
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" [(ngModel)]="userResponse.AnimalInteres" type="radio" name="AnimalInteres" id="AnimalInteres6"
+                    value="7">
+                  <label class="form-check-label" for="AnimalInteres6">
+                    Ovinos
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" [(ngModel)]="userResponse.AnimalInteres" type="radio" name="AnimalInteres" id="AnimalInteres7"
+                    value="8">
+                  <label class="form-check-label" for="AnimalInteres7">
+                    Organismos acuáticos
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" [(ngModel)]="userResponse.AnimalInteres" type="radio" name="AnimalInteres" id="AnimalInteres8"
+                    value="9">
+                  <label class="form-check-label" for="AnimalInteres8">
+                    Otro
+                  </label>
+                </div>
+              </div>
+            </div>
+
+
+            <div *ngIf="userResponse.AnimalInteres==9" class="col-lg-12">
+              <div class="form-group">
+                <label for="PosgradoPorQue">Especifique</label>
+                <textarea class="form-control" placeholder="" name="AnimalInteresOtro" [(ngModel)]="userResponse.AnimalInteresOtro" id="AnimalInteresOtro"
+                  rows="3"></textarea>
+              </div>
+            </div>
+          </div>
+
+
+
+          <div class="row">
+            <div class="col-lg-12">
+              <div class="form-group">
+                <h5>9.-Área de interés.</h5>
+                <div class="form-check">
+                  <input required [(ngModel)]="userResponse.AreaDeInteres" class="form-check-input" type="radio" name="AreaDeInteres" id="AreaDeInteres"
+                    value="1" checked>
+                  <label class="form-check-label" for="AreaDeInteres">
+                    Sanidad
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input required [(ngModel)]="userResponse.AreaDeInteres" class="form-check-input" type="radio" name="AreaDeInteres" id="AreaDeInteres1"
+                    value="2">
+                  <label class="form-check-label" for="AreaDeInteres1">
+                    Zootecnia
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input required [(ngModel)]="userResponse.AreaDeInteres" class="form-check-input" type="radio" name="AreaDeInteres" id="AreaDeInteres2"
+                    value="3">
+                  <label class="form-check-label" for="AreaDeInteres2">
+                    Investigación básica
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input required [(ngModel)]="userResponse.AreaDeInteres" class="form-check-input" type="radio" name="AreaDeInteres" id="AreaDeInteres3"
+                    value="4">
+                  <label class="form-check-label" for="AreaDeInteres3">
+                    Otra
+                  </label>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div *ngIf="userResponse.AreaDeInteres==4" class="row">
+            <div class="col-lg-12">
+              <div class="form-group">
+                <p>Especificar</p>
+                <input class="form-control" type="text" [(ngModel)]="userResponse.AreaDeInteresOtro" />
+              </div>
+            </div>
+          </div>
+
           <div class="row">
             <div *ngFor="let item of groups" class="col-lg-12" style="margin-top:10px;">
               <h5 style="font-weight: normal" [innerHTML]="item.question">
               </h5>
-              <div *ngFor="let opt of item.options;let i=index" class="form-check">
-                <input class="form-check-input" type="checkbox" [(ngModel)]="opt.checked" [value]="opt.value" id="defaultCheck-{{item.id}}-{{i}}">
-                <label class="form-check-label" for="defaultCheck-{{item.id}}-{{i}}">
-                  {{opt.name}}
-                </label>
+              <div *ngFor="let opt of item.options;let i=index">
+                <div *ngIf="opt.textbox">
+                  <p>
+                    {{opt.name}}
+                  </p>
+                  <input class="form-control" type="textbox" [(ngModel)]="opt.value" [value]="opt.value" id="defaultCheck-{{item.id}}-{{i}}">
+                </div>
+                <div *ngIf="!opt.textbox" class="form-check">
+                  <input class="form-check-input" type="checkbox" [(ngModel)]="opt.checked" [value]="opt.value" id="defaultCheck-{{item.id}}-{{i}}">
+                  <label class="form-check-label" for="defaultCheck-{{item.id}}-{{i}}">
+                    {{opt.name}}
+                  </label>
+                </div>
               </div>
             </div>
           </div>
@@ -122,9 +262,8 @@
           <div class="row">
             <div class="col-lg-12">
               <div class="form-group">
-                <h5 style="font-weight: normal">11. Marque una razón por lo que considera de utilidad contar con capital
-                  humano con estudios de Maestría en Ciencias de la Sanidad y Producción Animal con énfasis en Organismos
-                  acuáticos, Medicina Veterinaria y Tecnología de los productos pecuarios”</h5>
+                <h5 style="font-weight: normal">14.Marque una razón por lo que considera de utilidad contar con capital humano
+                  con estudios de Maestría en Ciencias en Sanidad y Producción Animal</h5>
                 <div class="form-check">
                   <input class="form-check-input" type="radio" [(ngModel)]="userResponse.Utilidad" value="1" id="utilidad1">
                   <label class="form-check-label" for="utilidad1">
@@ -162,8 +301,8 @@
           <div class="row">
             <div class="col-lg-12">
               <div class="form-group">
-                <h5 style="font-weight: normal">12.-¿Qué recomendaciones haría usted a esta universidad para hacer pertinente
-                  nuestra oferta de posgrado?</h5>
+                <h5 style="font-weight: normal">15.-¿Qué recomendaciones haría usted a esta universidad para hacer pertinente
+                  nuestra oferta de Maestría en Ciencias en Sanidad y Producción Animal?</h5>
                 <textarea class="form-control" [(ngModel)]="userResponse.Recomendaciones"></textarea>
               </div>
             </div>

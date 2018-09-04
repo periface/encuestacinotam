@@ -24,6 +24,12 @@
   ContratarEmpleadosEspecialidadLargoPlazo: string;
   UtilidadEspecialidad: string;
   RecomendacionesEspecialidad: string;
+  Desafio: string;
+  DesafioOther: string;
+  AnimalInteres: string;
+  AnimalInteresOtro: string;
+  AreaDeInteres: string;
+  AreaDeInteresOtro: string;
   /**
    *
    */
