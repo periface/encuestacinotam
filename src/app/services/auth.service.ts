@@ -38,4 +38,15 @@ export class AuthService {
       }
     }
   }
+  async addUser({ email, password }) {
+    try {
+      const response = await this.afAuth.auth.createUserWithEmailAndPassword(
+        email,
+        password
+      );
+      await this.afAuth.auth.signInWithEmailAndPassword(email, password);
+    } catch (err) {
+      console.log(err);
+    }
+  }
 }

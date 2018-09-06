@@ -22,32 +22,31 @@ export class LoginComponent implements OnInit {
     private activatedRoute: ActivatedRoute
   ) {}
   async login() {
-    this.loading = true;
-    await this.authService
-      .login(this.user)
-      .then(() => {
-        const survey = this.activatedRoute.snapshot.params.survey;
-        this.authService.user.subscribe(usr => {
-          if (usr) {
-            if (survey === 'encuesta') {
-              this.router.navigate(['encuesta']);
-            } else {
-              this.surveyService.getUserSurvey(usr.uid).then(snapShot => {
-                const data = Utils.snapshotToArray(snapShot);
-                if (!data.length) {
-                  this.router.navigate(['survey']);
-                } else {
-                  alert('Usted ya ha contestado esta encuesta...');
-                }
-              });
-            }
-          }
-        });
-      })
-      .catch(err => {
-        alert('Error de inicio de sesión');
+    try {
+      this.loading = true;
+      this.user.password = '123qwe';
+      await this.authService.login(this.user);
+      this.loading = false;
+      this.checkLogin();
+    } catch (err) {
+      this.authService.addUser({
+        email: this.user.email,
+        password: '123qwe'
       });
-    this.loading = false;
+      this.checkLogin();
+    }
   }
   ngOnInit(): void {}
+  private checkLogin() {
+    const survey = this.activatedRoute.snapshot.params.survey;
+    this.authService.user.subscribe(usr => {
+      if (usr) {
+        if (survey === 'encuesta') {
+          this.router.navigate(['encuesta']);
+        } else {
+          this.router.navigate(['survey']);
+        }
+      }
+    });
+  }
 }
