@@ -1,8 +1,8 @@
 ﻿export const HelpData = [
   {
     question: `10. Señale cuáles de las siguientes materias del <strong>área básica o tronco común</strong> considera
-           relevantes en la formación de capital humano en la “Maestría en Ciencias
-            de la Sanidad y Producción Animal” (puede elegir varias opciones).`,
+           relevantes en la formación de capital humano en la
+            “Maestría en Ciencias en Sanidad y Producción Animal” (puede elegir varias opciones).`,
     name: 'Área básica',
     id: 1,
     requiresOne: true,
@@ -74,7 +74,7 @@
   {
     question: `11. Señale cuáles de las siguientes materias del área temática de <strong>especialización de
           medicina veterinaria</strong> considera relevantes en la formación de capital humano
-           en la “Maestría en Ciencias de la Sanidad y Producción Animal (puede elegir varias opciones).`,
+           en la “Maestría en Ciencias en Sanidad y Producción Animal" (puede elegir varias opciones).`,
     name: 'Medicina veterinaria',
     id: 2,
     options: [
@@ -149,7 +149,7 @@
         checked: false
       },
       {
-        name: 'Temas selectos de medicina veterinari',
+        name: 'Temas selectos de medicina veterinaria',
         value: '62O',
         checked: false
       },
@@ -165,7 +165,7 @@
           del área temática de
           <strong>especialización de organismos
           acuáticos</strong> considera relevantes en la formación de capital humano en la
-          “Maestría en Ciencias de la Sanidad y Producción Animal (puede elegir varias opciones).`,
+          “Maestría en Ciencias en Sanidad y Producción Animal" (puede elegir varias opciones).`,
     name: 'Organismos acuáticos',
     id: 3,
     options: [
@@ -260,7 +260,7 @@
     question: `13. Señale cuáles de las siguientes materias del
           área temática de <strong>especialización de producción y tecnologías de los productos
           pecuarios</strong> considera relevantes en la formación de
-          capital humano en la “Maestría en Ciencias de la Sanidad y Producción Animal (puede elegir varias opciones).`,
+          capital humano en la “Maestría en Ciencias en Sanidad y Producción Animal" (puede elegir varias opciones).`,
     name: 'Producción y tecnología de los productos pecuarios',
     id: 4,
     options: [

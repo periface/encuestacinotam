@@ -2,11 +2,20 @@
 import { AuthService } from 'src/app/services/auth.service';
 import { Router } from '@angular/router';
 @Component({
-  template: `
-  <div class="cintilla-container">
+  template: `<div class="cintilla-container">
   <div class="cintilla-izquierda"></div>
   <div class="cintilla-derecha"></div>
   <div class="cintilla"></div>
+</div>
+<div class="bg-container"></div>
+<div class="logo-container">
+  <img src="/assets/img/logouat.JPG" />
+</div>
+<div class="logo-vet-container">
+  <img src="/assets/img/logovet.JPG" />
+</div>
+<div class="title-container">
+  <h1 class="text-center">Encuestas Cinotam</h1>
 </div>
 <br>
       <div class="card center vertical">
