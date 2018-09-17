@@ -13,20 +13,36 @@
 <div class="title-container">
   <h1 class="text-center">Encuestas Cinotam</h1>
 </div>
-<div class="login-container">
 
+<div class="login-container">
+  <h3 class="text-center">Seleccione una encuesta</h3>
+  <div class="options-container">
+    <div (click)="setSurvey('empleadores')" class="option option 1 " [ngClass]="{'active':this.selectedSurvey==='empleadores'}">
+      <p>
+        Empleadores
+      </p>
+      <img src="/assets/img/boss.png">
+    </div>
+    <div (click)="setSurvey('candidatos')" class="option option 2" [ngClass]="{'active':this.selectedSurvey==='candidatos'}">
+      <p>
+        Candidatos
+      </p>
+      <img src="https://thumbs.dreamstime.com/b/cartoon-employee-working-hard-man-his-desk-75680063.jpg">
+    </div>
+  </div>
+  <br><br><br>
   <div class="login-form-container">
     <form (ngSubmit)="login()">
       <div class="form-group">
-        <label>Por favor proporcione su cuenta de correo electrónico</label>
+        <label><strong>Por favor proporcione su cuenta de correo electrónico</strong></label>
         <input required="required" [(ngModel)]="user.email" name="email" type="email" class="form-control" placeholder="Enter email">
         <small id="emailHelp" class="form-text text-muted">Su correo electronico no sera compartido con nadie</small>
       </div>
       <br>
-      <button type="submit" [disabled]="loading" class="btn btn-primary">{{loading === true ? 'Cargando...':'Continuar'}}</button>
+      <button type="submit" [disabled]="loading" class="btn btn-primary">{{loading === true ?
+        'Cargando...':'Continuar'}}</button>
     </form>
   </div>
-
 </div>
 <div class="disclaimer-container text-center">
   <h3>

@@ -5,7 +5,6 @@
   width: 100%;
 }
 
-
 * {
   margin: 0;
   height: auto;
@@ -27,15 +26,43 @@
 .login-container {
   position: absolute;
   left: 50%;
-  top: 50%;
+  top: 60%;
   transform: translate(-50%, -50%);
   padding: 20px;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
   background-color: white;
 }
+.login-form-container{
+  ñposition: relative;
+  top: 20px;
+}
 .disclaimer-container {
   position: absolute;
   left: 50%;
-  top: 75%;
+  top: 100%;
   transform: translate(-50%, -50%);
+}
+.options-container {
+  width: 100%;
+  margin: 0 auto;
+  text-align: center;
+  position: relative;
+  left: 25%;
+  .option {
+    cursor: pointer;
+    margin-top: 5px;
+    margin-right: 10px;
+    float: left;
+    padding: 20px;
+    border: none;
+    width: 25%;
+    img {
+      width: 100%;
+    }
+  }
+}
+
+.active {
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+  border: 1px solid black;
 }

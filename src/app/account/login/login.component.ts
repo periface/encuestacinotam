@@ -13,14 +13,10 @@ export class LoginComponent implements OnInit {
   /**
    *
    */
+  selectedSurvey = '';
   user: LoginModel = new LoginModel();
   loading: boolean;
-  constructor(
-    private authService: AuthService,
-    private router: Router,
-    private surveyService: SurveyService,
-    private activatedRoute: ActivatedRoute
-  ) {}
+  constructor(private authService: AuthService, private router: Router) {}
   async login() {
     try {
       this.loading = true;
@@ -36,17 +32,24 @@ export class LoginComponent implements OnInit {
       this.checkLogin();
     }
   }
+  setSurvey(input) {
+    this.selectedSurvey = input;
+  }
   ngOnInit(): void {}
   private checkLogin() {
-    const survey = this.activatedRoute.snapshot.params.survey;
-    this.authService.user.subscribe(usr => {
-      if (usr) {
-        if (survey === 'encuesta') {
-          this.router.navigate(['encuesta']);
-        } else {
-          this.router.navigate(['survey']);
+    if (this.selectedSurvey === '') {
+      alert('Por favor seleccione una encuesta...');
+      this.loading = false;
+    } else {
+      this.authService.user.subscribe(usr => {
+        if (usr) {
+          if (this.selectedSurvey === 'candidatos') {
+            this.router.navigate(['encuesta']);
+          } else {
+            this.router.navigate(['survey']);
+          }
         }
-      }
-    });
+      });
+    }
   }
 }
