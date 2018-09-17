@@ -40,6 +40,11 @@
         name: 'Actividades complementarias',
         value: '7',
         checked: false
+      },
+      {
+        name: 'Otro',
+        value: '',
+        textbox: true
       }
     ]
   },
@@ -123,6 +128,11 @@
         name: 'Temas selectos de medicina veterinaria',
         value: '15',
         checked: false
+      },
+      {
+        name: 'Otro',
+        value: '',
+        textbox: true
       }
     ]
   },
@@ -206,6 +216,11 @@
         name: 'Reproducción de peces de consumo',
         value: '15',
         checked: false
+      },
+      {
+        name: 'Otro',
+        value: '',
+        textbox: true
       }
     ]
   },
@@ -291,6 +306,11 @@
         name: 'Inocuidad alimentaria',
         value: '15',
         checked: false
+      },
+      {
+        name: 'Otro',
+        value: '',
+        textbox: true
       }
     ]
   }

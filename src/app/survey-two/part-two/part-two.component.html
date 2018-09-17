@@ -1,12 +1,27 @@
-﻿<div *ngIf="userResponse" class="container">
+﻿<div class="cintilla-container">
+  <div class="cintilla-izquierda"></div>
+  <div class="cintilla-derecha"></div>
+  <div class="cintilla"></div>
+</div>
+<div class="bg-container"></div>
+<div class="logo-container">
+  <img src="/assets/img/logouat.JPG" />
+</div>
+<div class="logo-vet-container">
+  <img src="/assets/img/logovet.JPG" />
+</div>
+<div *ngIf="userResponse" class="container">
   <div class="row">
     <div class="col-lg-12">
       <br>
       <br>
-      <h2 class="text-center">Encuesta a candidatos <br>Sección 2.-Maestría en Ciencias de la Sanidad y Producción Animal</h2>
+      <h2 class="text-center">Encuesta a candidatos <br>Sección 2.-Maestría en Ciencias de la Sanidad <br>y Producción
+        Animal</h2><br>
       <p>
-        Esta maestría tiene el objetivo de formar capital humano competente en las áreas prioritarias y emergentes en la medicina
-        veterinaria y en la producción de alimentos de origen animal con tres énfasis: Organismos acuáticos, Medicina Veterinaria
+        Esta maestría tiene el objetivo de formar capital humano competente en las áreas prioritarias y emergentes en
+        la medicina
+        veterinaria y en la producción de alimentos de origen animal con tres énfasis: Organismos acuáticos, Medicina
+        Veterinaria
         y Tecnología de los productos pecuarios.
       </p>
       <br>
@@ -23,8 +38,10 @@
               <div class="form-group">
                 <h5>7.-Interés por la Maestría</h5>
                 <p>
-                  ¿Estaría dispuesto a inscribirse en un posgrado para realizar una ““Maestría en Ciencias de la Sanidad y Producción Animal
-                  con énfasis en Organismos acuáticos, Medicina Veterinaria y Tecnología de los productos pecuarios según
+                  ¿Estaría dispuesto a inscribirse en un posgrado para realizar una ““Maestría en Ciencias de la
+                  Sanidad y Producción Animal
+                  con énfasis en Organismos acuáticos, Medicina Veterinaria y Tecnología de los productos pecuarios
+                  según
                   lo referido en la presentación de esta encuesta?.
                 </p>
 
@@ -34,15 +51,15 @@
                   </strong>
                 </p>
                 <div class="form-check">
-                  <input class="form-check-input" [(ngModel)]="userResponse.InteresCortoPlazo" type="radio" name="InteresCortoPlazo" id="InteresCortoPlazo"
-                    value="1" checked>
+                  <input class="form-check-input" [(ngModel)]="userResponse.InteresCortoPlazo" type="radio" name="InteresCortoPlazo"
+                    id="InteresCortoPlazo" value="1" checked>
                   <label class="form-check-label" for="InteresCortoPlazo">
                     Si
                   </label>
                 </div>
                 <div class="form-check">
-                  <input class="form-check-input" [(ngModel)]="userResponse.InteresCortoPlazo" type="radio" name="InteresCortoPlazo" id="InteresCortoPlazo1"
-                    value="2">
+                  <input class="form-check-input" [(ngModel)]="userResponse.InteresCortoPlazo" type="radio" name="InteresCortoPlazo"
+                    id="InteresCortoPlazo1" value="2">
                   <label class="form-check-label" for="InteresCortoPlazo1">
                     No
                   </label>
@@ -53,15 +70,15 @@
                   </strong>
                 </p>
                 <div class="form-check">
-                  <input class="form-check-input" [(ngModel)]="userResponse.InteresLargoPlazo" type="radio" name="InteresLargoPlazo" id="InteresLargoPlazo"
-                    value="1" checked>
+                  <input class="form-check-input" [(ngModel)]="userResponse.InteresLargoPlazo" type="radio" name="InteresLargoPlazo"
+                    id="InteresLargoPlazo" value="1" checked>
                   <label class="form-check-label" for="InteresLargoPlazo">
                     Si
                   </label>
                 </div>
                 <div class="form-check">
-                  <input class="form-check-input" [(ngModel)]="userResponse.InteresLargoPlazo" type="radio" name="InteresLargoPlazo" id="InteresLargoPlazo1"
-                    value="2">
+                  <input class="form-check-input" [(ngModel)]="userResponse.InteresLargoPlazo" type="radio" name="InteresLargoPlazo"
+                    id="InteresLargoPlazo1" value="2">
                   <label class="form-check-label" for="InteresLargoPlazo1">
                     No
                   </label>
@@ -97,20 +114,22 @@
               <div class="form-group">
                 <h5>7.4. Cuál de los tres énfasis elegiría</h5>
                 <div class="form-check">
-                  <input required [(ngModel)]="userResponse.Enfasis" class="form-check-input" type="radio" name="Enfasis" id="Enfasis1" value="1"
-                    checked="checked" />
+                  <input required [(ngModel)]="userResponse.Enfasis" class="form-check-input" type="radio" name="Enfasis"
+                    id="Enfasis1" value="1" checked="checked" />
                   <label class="form-check-label" for="Enfasis1">
                     Organismos acuáticos
                   </label>
                 </div>
                 <div class="form-check">
-                  <input required [(ngModel)]="userResponse.Enfasis" class="form-check-input" type="radio" name="Enfasis" id="Enfasis2" value="2">
+                  <input required [(ngModel)]="userResponse.Enfasis" class="form-check-input" type="radio" name="Enfasis"
+                    id="Enfasis2" value="2">
                   <label class="form-check-label" for="Enfasis2">
                     Medicina Veterinaria
                   </label>
                 </div>
                 <div class="form-check">
-                  <input required [(ngModel)]="userResponse.Enfasis" class="form-check-input" type="radio" name="Enfasis" id="Enfasis3" value="3">
+                  <input required [(ngModel)]="userResponse.Enfasis" class="form-check-input" type="radio" name="Enfasis"
+                    id="Enfasis3" value="3">
                   <label class="form-check-label" for="Enfasis3">
                     Tecnología de los productos pecuarios
                   </label>
@@ -121,7 +140,8 @@
           <div class="row">
             <div class="col-lg-12">
               <div class="form-group">
-                <h5>7.5 Disposición de tiempo para cursar sus estudios de maestría (Nota: solo si su respuesta fue afirmativa
+                <h5>7.5 Disposición de tiempo para cursar sus estudios de maestría (Nota: solo si su respuesta fue
+                  afirmativa
                   en la preg. 7)</h5>
                 <label class="control-label">
                   Entre semana
@@ -137,16 +157,19 @@
           <div class="row">
             <div class="col-lg-12">
               <div class="form-group">
-                <h5>7.6 En qué horario podría cursar sus estudios de maestría (Nota: solo si su respuesta fue afirmativa
+                <h5>7.6 En qué horario podría cursar sus estudios de maestría (Nota: solo si su respuesta fue
+                  afirmativa
                   en la preg. 7)</h5>
                 <div class="form-check">
-                  <input required [(ngModel)]="userResponse.Horario" class="form-check-input" type="radio" name="Horario" id="Horario" value="1">
+                  <input required [(ngModel)]="userResponse.Horario" class="form-check-input" type="radio" name="Horario"
+                    id="Horario" value="1">
                   <label class="form-check-label" for="Horario">
                     Mañana
                   </label>
                 </div>
                 <div class="form-check">
-                  <input required [(ngModel)]="userResponse.Horario" class="form-check-input" type="radio" name="Horario" id="Horario1" value="2">
+                  <input required [(ngModel)]="userResponse.Horario" class="form-check-input" type="radio" name="Horario"
+                    id="Horario1" value="2">
                   <label class="form-check-label" for="Horario1">
                     Tarde
                   </label>
@@ -157,26 +180,27 @@
           <div class="row">
             <div class="col-lg-12">
               <div class="form-group">
-                <h5>7.7 Modalidad para cubrir sus estudios de maestría (Nota: solo si su respuesta fue afirmativa en la preg.
+                <h5>7.7 Modalidad para cubrir sus estudios de maestría (Nota: solo si su respuesta fue afirmativa en la
+                  preg.
                   7)
                 </h5>
                 <div class="form-check">
-                  <input required [(ngModel)]="userResponse.Financiamento" class="form-check-input" type="radio" name="Financiamento" id="Financiamento1"
-                    value="1">
+                  <input required [(ngModel)]="userResponse.Financiamento" class="form-check-input" type="radio" name="Financiamento"
+                    id="Financiamento1" value="1">
                   <label class="form-check-label" for="Financiamento1">
                     Beca
                   </label>
                 </div>
                 <div class="form-check">
-                  <input required [(ngModel)]="userResponse.Financiamento" class="form-check-input" type="radio" name="Financiamento" id="Financiamento2"
-                    value="2">
+                  <input required [(ngModel)]="userResponse.Financiamento" class="form-check-input" type="radio" name="Financiamento"
+                    id="Financiamento2" value="2">
                   <label class="form-check-label" for="Financiamento2">
                     Recursos propios
                   </label>
                 </div>
                 <div class="form-check">
-                  <input required [(ngModel)]="userResponse.Financiamento" class="form-check-input" type="radio" name="Financiamento" id="Financiamento3"
-                    value="3">
+                  <input required [(ngModel)]="userResponse.Financiamento" class="form-check-input" type="radio" name="Financiamento"
+                    id="Financiamento3" value="3">
                   <label class="form-check-label" for="Financiamento3">
                     Otro
                   </label>
@@ -184,8 +208,8 @@
                 <label *ngIf="userResponse.Financiamento==='3'" class="control-label">
                   Especifique
                 </label>
-                <input type="text" [(ngModel)]="userResponse.FinanciamentoOtro" *ngIf="userResponse.Financiamento==='3'" class="form-control"
-                />
+                <input type="text" [(ngModel)]="userResponse.FinanciamentoOtro" *ngIf="userResponse.Financiamento==='3'"
+                  class="form-control" />
               </div>
             </div>
           </div>
@@ -204,10 +228,25 @@
               <h5 style="font-weight: normal" [innerHTML]="item.question">
               </h5>
               <div *ngFor="let opt of item.options;let i=index" class="form-check">
-                <input class="form-check-input" type="checkbox" [(ngModel)]="opt.checked" [value]="opt.value" id="defaultCheck-{{item.id}}-{{i}}">
-                <label class="form-check-label" for="defaultCheck-{{item.id}}-{{i}}">
-                  {{opt.name}}
-                </label>
+                <div *ngIf="opt.textbox">
+                  <!-- <p>
+                        {{opt.name}}
+                      </p> -->
+                  <div style="width:10%;display: inline-block;padding-left: 0.5rem;" class="form-check">
+                    <input class="form-check-input" type="checkbox" [(ngModel)]="opt.checked" [value]="opt.value" id="defaultCheck-{{item.id}}-{{i}}">
+                    <label class="form-check-label" for="defaultCheck-{{item.id}}-{{i}}">
+                      {{opt.name}}
+                    </label>
+                  </div>
+                  <input style="width:30%;display: inline-block" *ngIf="opt.checked" placeholder="Especifique" class="form-control"
+                    type="textbox" [(ngModel)]="opt.value" [value]="opt.value" id="defaultCheck-{{item.id}}-{{i}}">
+                </div>
+                <div *ngIf="!opt.textbox" style="display: inline-block;padding-left: 0.5rem;" class="form-check">
+                  <input  class="form-check-input" type="checkbox" [(ngModel)]="opt.checked" [value]="opt.value" id="defaultCheck-{{item.id}}-{{i}}">
+                  <label class="form-check-label" for="defaultCheck-{{item.id}}-{{i}}">
+                    {{opt.name}}
+                  </label>
+                </div>
               </div>
             </div>
           </div>
@@ -219,7 +258,8 @@
           <div class="row">
             <div class="col-lg-12">
               <div class="form-group">
-                <h5 style="font-weight: normal">12.-¿Qué recomendaciones haría usted a esta universidad para hacer pertinente
+                <h5 style="font-weight: normal">12.-¿Qué recomendaciones haría usted a esta universidad para hacer
+                  pertinente
                   nuestra oferta de posgrado?</h5>
                 <textarea class="form-control" [(ngModel)]="userResponse.RecomendacionesUno"></textarea>
               </div>
@@ -229,7 +269,8 @@
 
 
 
-          <button (click)="save()" [disabled]="saving" class="btn btn-primary btn-xs">{{saving ===true ? 'Guardando...':'Continuar'}}</button>
+          <button (click)="save()" [disabled]="saving" class="btn btn-primary btn-xs">{{saving ===true ?
+            'Guardando...':'Continuar'}}</button>
         </div>
       </div>
     </div>
