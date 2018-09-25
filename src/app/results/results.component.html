@@ -1,0 +1,73 @@
+﻿<div class="row">
+  <div class="col-lg-12">
+    <h3>
+      Resultados
+    </h3>
+  </div>
+  <div class="col-lg-12">
+    <table class="table table-sm table-responsive">
+      <thead>
+        <tr>
+          <th>
+            Correo
+          </th>
+          <th>
+            Edad
+          </th>
+          <th>
+            Genero
+          </th>
+          <th>
+            Escolaridad
+          </th>
+          <th>
+            Especifica
+          </th>
+          <th>
+            Sector
+          </th>
+          <th>
+            Area
+          </th>
+          <th>
+            Desafio
+          </th>
+          <th>
+            Desafio Especifico
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of this.results">
+          <td>
+            {{item.Email}}
+          </td>
+          <td>
+            {{item.RangoEdad}}
+          </td>
+          <td>
+            {{item.Genero}}
+          </td>
+          <td>
+            {{item.Escolaridad}}
+          </td>
+          <td>
+            {{item.EscolaridadSpecifica}}
+          </td>
+          <td>
+            {{item.Sector}}
+          </td>
+          <td>
+            {{item.Area}}
+          </td>
+          <td>
+            {{item.Desafio}}
+          </td>
+          <td>
+            {{item.DesafioOther}}
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

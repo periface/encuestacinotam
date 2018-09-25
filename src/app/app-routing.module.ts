@@ -11,6 +11,7 @@ import { ThirdSurveyComponent } from './survey/third-survey/third-survey.compone
 import { PartOneComponent } from './survey-two/part-one/part-one.component';
 import { PartTwoComponent } from './survey-two/part-two/part-two.component';
 import { UsersComponent } from './users/users.component';
+import { ResultsComponent } from './results/results.component';
 
 const routes: Routes = [
   {
@@ -60,6 +61,10 @@ const routes: Routes = [
   {
     path: 'users',
     component: UsersComponent
+  },
+  {
+    path: 'resultados',
+    component: ResultsComponent
   },
   {
     path: '**',

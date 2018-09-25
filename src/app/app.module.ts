@@ -14,9 +14,10 @@ import { SurveyModule } from './survey/survey.module';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { SurveyTwoModule } from './survey-two/survey-two.module';
 import { UsersComponent } from './users/users.component';
+import { ResultsComponent } from './results/results.component';
 @NgModule({
-  declarations: [AppComponent, UsersComponent],
-  entryComponents: [UsersComponent],
+  declarations: [AppComponent, UsersComponent, ResultsComponent],
+  entryComponents: [UsersComponent, ResultsComponent],
 
   imports: [
     BrowserModule,
