@@ -35,6 +35,48 @@
           <th>
             Desafio Especifico
           </th>
+          <th>
+            Posgrado
+          </th>
+          <th>
+            ¿Por que?
+          </th>
+          <th>
+            Contratar Capital Humano Corto Plazo
+          </th>
+          <th>
+            Contratar Capital Humano Largo Plazo
+          </th>
+          <th>
+            Especie Animal de Interés
+          </th>
+          <th>
+            Especie Animal de Interés (otro)
+          </th>
+          <th>
+            Area de Interés
+          </th>
+          <th>
+            Area de Interés (otro)
+          </th>
+          <th>
+            Recomendaciones
+          </th>
+          <th>
+            Empleados con especialidad
+          </th>
+          <th>
+            Contratar Empleados con especialidad (Corto plazo)
+          </th>
+          <th>
+            Contratar Empleados con especialidad (Largo plazo)
+          </th>
+          <th>
+            Razón Utilidad
+          </th>
+          <th>
+            Recomendaciones Especialidad
+          </th>
         </tr>
       </thead>
       <tbody>
@@ -66,8 +108,115 @@
           <td>
             {{item.DesafioOther}}
           </td>
+          <td>
+            {{item.Posgrado}}
+          </td>
+          <td>
+            {{item.PosgradoPorQue}}
+          </td>
+          <td>
+            {{item.MaestriaCortoPlazo}}
+          </td>
+          <td>
+            {{item.MaestriaLargoPlazo}}
+          </td>
+          <td>
+            {{item.AnimalInteres}}
+          </td>
+          <td>
+            {{item.AnimalInteresOtro}}
+          </td>
+          <td>
+            {{item.AreaDeInteres}}
+          </td>
+          <td>
+            {{item.AreaDeInteresOtro}}
+          </td>
+          <td>
+            {{item.Recomendaciones}}
+          </td>
+          <td>
+            {{item.EmpleadosConEspecialidad}}
+          </td>
+          <td>
+            {{item.ContratarEmpleadosEspecialidadCortoPlazo}}
+          </td>
+          <td>
+            {{item.ContratarEmpleadosEspecialidadLargoPlazo}}
+          </td>
+          <td>
+            {{item.UtilidadEspecialidad}}
+          </td>
+          <td>
+            {{item.RecomendacionesEspecialidad}}
+          </td>
         </tr>
       </tbody>
     </table>
+  </div>
+  <div class=col-lg-12>
+    <div class="frecuencias">
+      <h4>Frecuencias</h4>
+
+
+
+      <div *ngFor="let item of this.frecuencies">
+
+
+        <table>
+          <thead>
+            <tr>
+              <th>{{item.area}}</th>
+              <th>Frecuencias</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let f of item.frecuencies">
+              <td>
+                {{f.name}}
+              </td>
+              <td>
+                {{f.count}}
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+
+    </div>
+  </div>
+
+  <div class=col-lg-12>
+    <div class="frecuencias">
+      <h4>Frecuencias</h4>
+
+
+
+      <div *ngFor="let item of this.frecuenciesEsp">
+
+
+        <table>
+          <thead>
+            <tr>
+              <th>{{item.area}}</th>
+              <th>Frecuencias</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let f of item.frecuencies">
+              <td>
+                {{f.name}}
+              </td>
+              <td>
+                {{f.count}}
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+
+    </div>
   </div>
 </div>
