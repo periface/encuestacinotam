@@ -61,16 +61,10 @@ export class PartTwoComponent {
           name: opt.name
         };
       });
-      if (element.requiresOne && !selected.length) {
-        alert('Por favor seleccione al menos una materia de ' + element.name);
-        this.saving = false;
-        return [];
-      } else {
-        data.push({
-          group: element.name,
-          elements: selected
-        });
-      }
+      data.push({
+        group: element.name,
+        elements: selected
+      });
     }
     return data;
   }
