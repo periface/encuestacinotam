@@ -1,51 +1,56 @@
 ﻿export const HelpDataReasons = [
   {
     id: 1,
-    question: 'Si respondio, SI',
-    name: 'Si respondio, SI',
+    question: 'Si respondió, SÍ',
+    name: 'Si respondió, SÍ',
     requiresOne: false,
     options: [
       {
-        name: 'Superación profesional y persona',
+        name: 'Superación profesional y personal',
         value: '1',
         checked: false
       },
       {
-        name: 'Necesidades de herramientas para aplicarlas',
+        name: 'Adquirir competencias para mi desarrollo profesional',
         value: '2',
         checked: false
       },
       {
-        name: 'Mejorar sus ingresos',
+        name: 'Necesidades de herramientas para aplicarlas',
         value: '3',
         checked: false
       },
       {
-        name: 'Continuar sus estudios',
+        name: 'Mejorar sus ingresos',
         value: '4',
         checked: false
       },
       {
-        name: 'Ampliar el campo de trabajo',
+        name: 'Continuar sus estudios',
         value: '5',
         checked: false
       },
       {
-        name: 'Exigencia del trabajo',
+        name: 'Ampliar el campo de trabajo',
         value: '6',
         checked: false
       },
       {
-        name: 'Otras',
+        name: 'Exigencia del trabajo',
         value: '7',
+        checked: false
+      },
+      {
+        name: 'Otras',
+        value: '8',
         checked: false,
         isOther: true
       }
     ]
   },
   {
-    question: 'Si respondio, NO',
-    name: 'Si respondio, NO',
+    question: 'Si respondió, NO',
+    name: 'Si respondió, NO',
     id: 2,
     options: [
       {

@@ -60,6 +60,9 @@
             Area de Interés (otro)
           </th>
           <th>
+            Utilidad
+          </th>
+          <th>
             Recomendaciones
           </th>
           <th>
@@ -103,7 +106,7 @@
             {{item.Area}}
           </td>
           <td>
-            {{item.Desafio}}
+            {{fixValue(item,'Desafio',1)}}
           </td>
           <td>
             {{item.DesafioOther}}
@@ -115,22 +118,26 @@
             {{item.PosgradoPorQue}}
           </td>
           <td>
-            {{item.MaestriaCortoPlazo}}
+            {{fixValue(item,'MaestriaCortoPlazo',2)}}
+
           </td>
           <td>
-            {{item.MaestriaLargoPlazo}}
+            {{fixValue(item,'MaestriaLargoPlazo',2)}}
           </td>
           <td>
-            {{item.AnimalInteres}}
+            {{fixValue(item,'AnimalInteres',1)}}
           </td>
           <td>
             {{item.AnimalInteresOtro}}
           </td>
           <td>
-            {{item.AreaDeInteres}}
+            {{fixValue(item,'AreaDeInteres',1)}}
           </td>
           <td>
             {{item.AreaDeInteresOtro}}
+          </td>
+          <td>
+            {{item.Utilidad}}
           </td>
           <td>
             {{item.Recomendaciones}}
@@ -139,10 +146,10 @@
             {{item.EmpleadosConEspecialidad}}
           </td>
           <td>
-            {{item.ContratarEmpleadosEspecialidadCortoPlazo}}
+            {{fixValue(item,'ContratarEmpleadosEspecialidadCortoPlazo',2)}}
           </td>
           <td>
-            {{item.ContratarEmpleadosEspecialidadLargoPlazo}}
+            {{fixValue(item,'ContratarEmpleadosEspecialidadLargoPlazo',2)}}
           </td>
           <td>
             {{item.UtilidadEspecialidad}}
@@ -162,8 +169,7 @@
 
       <div *ngFor="let item of this.frecuencies">
 
-
-        <table>
+        <table *ngIf="item.name !=='Otro'">
           <thead>
             <tr>
               <th>{{item.area}}</th>
@@ -172,10 +178,10 @@
           </thead>
           <tbody>
             <tr *ngFor="let f of item.frecuencies">
-              <td>
+              <td *ngIf="f.name !== 'Otro'">
                 {{f.name}}
               </td>
-              <td>
+              <td *ngIf="f.name !== 'Otro'">
                 {{f.count}}
               </td>
             </tr>
@@ -205,10 +211,10 @@
           </thead>
           <tbody>
             <tr *ngFor="let f of item.frecuencies">
-              <td>
+              <td *ngIf="f.name !== 'Otro'">
                 {{f.name}}
               </td>
-              <td>
+              <td *ngIf="f.name !== 'Otro'">
                 {{f.count}}
               </td>
             </tr>

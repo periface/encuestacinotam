@@ -44,12 +44,12 @@ export class FirstSurveyComponent {
       this.saving = false;
       return false;
     }
-    if (!this.isPosgradoValid) {
-      alert('Especifique por que, "Pregunta 5.1" ');
-      this.saving = false;
-      this.userResponse.PosgradoPorQue = '';
-      return false;
-    }
+    // if (!this.isPosgradoValid) {
+    //   alert('Especifique por que, "Pregunta 5.1" ');
+    //   this.saving = false;
+    //   this.userResponse.PosgradoPorQue = '';
+    //   return false;
+    // }
     setTimeout(async () => {
       await this.surveyService.saveSurvey(this.userResponse);
       this.saving = false;

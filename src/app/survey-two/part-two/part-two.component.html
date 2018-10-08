@@ -15,14 +15,11 @@
     <div class="col-lg-12">
       <br>
       <br>
-      <h2 class="text-center">Encuesta a candidatos <br>Sección 2.-Maestría en Ciencias de la Sanidad <br>y Producción
+      <h2 class="text-center">Sección 2.-Maestría en Ciencias en Sanidad <br>y Producción
         Animal</h2><br>
       <p>
         Esta maestría tiene el objetivo de formar capital humano competente en las áreas prioritarias y emergentes en
-        la medicina
-        veterinaria y en la producción de alimentos de origen animal con tres énfasis: Organismos acuáticos, Medicina
-        Veterinaria
-        y Tecnología de los productos pecuarios.
+        la medicina veterinaria y en la producción de alimentos de origen animal.
       </p>
       <br>
       <br>
@@ -38,11 +35,8 @@
               <div class="form-group">
                 <h5>7.-Interés por la Maestría</h5>
                 <p>
-                  ¿Estaría dispuesto a inscribirse en un posgrado para realizar una ““Maestría en Ciencias de la
-                  Sanidad y Producción Animal
-                  con énfasis en Organismos acuáticos, Medicina Veterinaria y Tecnología de los productos pecuarios
-                  según
-                  lo referido en la presentación de esta encuesta?.
+                  ¿Estaría dispuesto(a) a inscribirse en un posgrado para realizar una Maestría en Ciencias en la
+                  Sanidad y Producción Animal?
                 </p>
 
                 <p>
@@ -88,7 +82,7 @@
           </div>
           <div class="row">
             <div class="col-lg-12">
-              <h5>7.3. Señale cuál de las siguientes razones explica el porqué de su respuesta a la pregunta anterior.</h5>
+              <h5>7.3. Señale cuál de las siguientes opciones explica la razón de su respuesta a la pregunta anterior.</h5>
             </div>
           </div>
           <div class="row">
@@ -112,37 +106,8 @@
           <div class="row">
             <div class="col-lg-12">
               <div class="form-group">
-                <h5>7.4. Cuál de los tres énfasis elegiría</h5>
-                <div class="form-check">
-                  <input required [(ngModel)]="userResponse.Enfasis" class="form-check-input" type="radio" name="Enfasis"
-                    id="Enfasis1" value="1" checked="checked" />
-                  <label class="form-check-label" for="Enfasis1">
-                    Organismos acuáticos
-                  </label>
-                </div>
-                <div class="form-check">
-                  <input required [(ngModel)]="userResponse.Enfasis" class="form-check-input" type="radio" name="Enfasis"
-                    id="Enfasis2" value="2">
-                  <label class="form-check-label" for="Enfasis2">
-                    Medicina Veterinaria
-                  </label>
-                </div>
-                <div class="form-check">
-                  <input required [(ngModel)]="userResponse.Enfasis" class="form-check-input" type="radio" name="Enfasis"
-                    id="Enfasis3" value="3">
-                  <label class="form-check-label" for="Enfasis3">
-                    Tecnología de los productos pecuarios
-                  </label>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-lg-12">
-              <div class="form-group">
-                <h5>7.5 Disposición de tiempo para cursar sus estudios de maestría (Nota: solo si su respuesta fue
-                  afirmativa
-                  en la preg. 7)</h5>
+                <h5>7.4 Disposición de tiempo para cursar sus estudios de Maestría en Ciencias en la Sanidad y
+                  Producción (Nota: responder si su respuesta fue afirmativa en la preg. 7)</h5>
                 <label class="control-label">
                   Entre semana
                 </label>
@@ -157,9 +122,8 @@
           <div class="row">
             <div class="col-lg-12">
               <div class="form-group">
-                <h5>7.6 En qué horario podría cursar sus estudios de maestría (Nota: solo si su respuesta fue
-                  afirmativa
-                  en la preg. 7)</h5>
+                <h5>7.5 En qué horario podría cursar sus estudios de Maestría en Ciencias en la Sanidad y Producción
+                  (Nota: responder si su respuesta fue afirmativa en la preg. 7)</h5>
                 <div class="form-check">
                   <input required [(ngModel)]="userResponse.Horario" class="form-check-input" type="radio" name="Horario"
                     id="Horario" value="1">
@@ -180,9 +144,8 @@
           <div class="row">
             <div class="col-lg-12">
               <div class="form-group">
-                <h5>7.7 Modalidad para cubrir sus estudios de maestría (Nota: solo si su respuesta fue afirmativa en la
-                  preg.
-                  7)
+                <h5>7.6 Modalidad para cubrir sus estudios de Maestría en Ciencias en la Sanidad y Producción (Nota:
+                  responder si su respuesta fue afirmativa en la preg. 7)
                 </h5>
                 <div class="form-check">
                   <input required [(ngModel)]="userResponse.Financiamento" class="form-check-input" type="radio" name="Financiamento"
@@ -223,28 +186,87 @@
             </div>
           </div>
 
+
+
+
+
+
           <div class="row">
-            <div *ngFor="let item of groups" class="col-lg-12" style="margin-top:10px;">
-              <h5 style="font-weight: normal" [innerHTML]="item.question">
-              </h5>
-              <div *ngFor="let opt of item.options;let i=index" class="form-check">
-                <div *ngIf="opt.textbox">
-                  <!-- <p>
-                        {{opt.name}}
-                      </p> -->
-                  <div style="width:10%;display: inline-block;padding-left: 0.5rem;" class="form-check">
-                    <input class="form-check-input" type="checkbox" [(ngModel)]="opt.checked" [value]="opt.value" id="defaultCheck-{{item.id}}-{{i}}">
-                    <label class="form-check-label" for="defaultCheck-{{item.id}}-{{i}}">
-                      {{opt.name}}
-                    </label>
-                  </div>
-                  <input style="width:30%;display: inline-block" *ngIf="opt.checked" placeholder="Especifique" class="form-control"
-                    type="textbox" [(ngModel)]="opt.value" [value]="opt.value" id="defaultCheck-{{item.id}}-{{i}}">
+            <div class="col-lg-12">
+              <div class="form-group">
+                <h5>8.1 Especie animal de interés:</h5>
+                <div class="form-check">
+                  <input required [(ngModel)]="userResponse.EspecieAnimalInteres" class="form-check-input" type="radio"
+                    name="EspecieAnimal" value="1">
+                  <label class="form-check-label">
+                    Rumiantes
+                  </label>
                 </div>
-                <div *ngIf="!opt.textbox" style="display: inline-block;padding-left: 0.5rem;" class="form-check">
-                  <input  class="form-check-input" type="checkbox" [(ngModel)]="opt.checked" [value]="opt.value" id="defaultCheck-{{item.id}}-{{i}}">
-                  <label class="form-check-label" for="defaultCheck-{{item.id}}-{{i}}">
-                    {{opt.name}}
+                <div class="form-check">
+                  <input required [(ngModel)]="userResponse.EspecieAnimalInteres" class="form-check-input" type="radio"
+                    name="EspecieAnimal" value="2">
+                  <label class="form-check-label">
+                    Equinos
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input required [(ngModel)]="userResponse.EspecieAnimalInteres" class="form-check-input" type="radio"
+                    name="EspecieAnimal" value="3">
+                  <label class="form-check-label">
+                    Porcinos
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input required [(ngModel)]="userResponse.EspecieAnimalInteres" class="form-check-input" type="radio"
+                    name="EspecieAnimal" value="4">
+                  <label class="form-check-label">
+                    Aves
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input required [(ngModel)]="userResponse.EspecieAnimalInteres" class="form-check-input" type="radio"
+                    name="EspecieAnimal" value="5">
+                  <label class="form-check-label">
+                    Pequeñas especies
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input required [(ngModel)]="userResponse.EspecieAnimalInteres" class="form-check-input" type="radio"
+                    name="EspecieAnimal" value="6">
+                  <label class="form-check-label">
+                    Organismos acuáticos
+                  </label>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+
+
+          <div class="row">
+            <div class="col-lg-12">
+              <div class="form-group">
+                <h5>8.2 ¿Cuál de las siguientes áreas sonde interés para su formación en posgrado?</h5>
+                <div class="form-check">
+                  <input required [(ngModel)]="userResponse.AreaInteresPosgrado" class="form-check-input" type="radio"
+                    name="AreaInteresPosgrado" value="1">
+                  <label class="form-check-label">
+                    Sanidad
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input required [(ngModel)]="userResponse.AreaInteresPosgrado" class="form-check-input" type="radio"
+                    name="AreaInteresPosgrado" value="2">
+                  <label class="form-check-label">
+                    Producción animal
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input required [(ngModel)]="userResponse.AreaInteresPosgrado" class="form-check-input" type="radio"
+                    name="AreaInteresPosgrado" value="3">
+                  <label class="form-check-label">
+                    Inocuidad Alimentaria
                   </label>
                 </div>
               </div>
@@ -255,20 +277,45 @@
 
 
 
+          <!-- <div class="row">
+            <div *ngFor="let item of groups" class="col-lg-12" style="margin-top:10px;">
+              <h5 style="font-weight: normal" [innerHTML]="item.question">
+              </h5>
+              <div *ngFor="let opt of item.options;let i=index" class="form-check">
+                <div *ngIf="opt.textbox">
+
+                  <div style="width:10%;display: inline-block;padding-left: 0.5rem;" class="form-check">
+                    <input class="form-check-input" type="checkbox" [(ngModel)]="opt.checked" [value]="opt.value" id="defaultCheck-{{item.id}}-{{i}}">
+                    <label class="form-check-label" for="defaultCheck-{{item.id}}-{{i}}">
+                      {{opt.name}}
+                    </label>
+                  </div>
+                  <input style="width:30%;display: inline-block" *ngIf="opt.checked" placeholder="Especifique" class="form-control"
+                    type="textbox" [(ngModel)]="opt.value" [value]="opt.value" id="defaultCheck-{{item.id}}-{{i}}">
+                </div>
+                <div *ngIf="!opt.textbox" style="display: inline-block;padding-left: 0.5rem;" class="form-check">
+                  <input class="form-check-input" type="checkbox" [(ngModel)]="opt.checked" [value]="opt.value" id="defaultCheck-{{item.id}}-{{i}}">
+                  <label class="form-check-label" for="defaultCheck-{{item.id}}-{{i}}">
+                    {{opt.name}}
+                  </label>
+                </div>
+              </div>
+            </div>
+          </div> -->
+
+
+
+
+
           <div class="row">
             <div class="col-lg-12">
               <div class="form-group">
-                <h5 style="font-weight: normal">12.-¿Qué recomendaciones haría usted a esta universidad para hacer
-                  pertinente
-                  nuestra oferta de posgrado?</h5>
+                <h5 style="font-weight: normal">9.- ¿Qué recomendaciones haría usted a esta universidad para hacer
+                  pertinente nuestra oferta de Maestría en Ciencias en la Sanidad y Producción?</h5>
                 <textarea class="form-control" [(ngModel)]="userResponse.RecomendacionesUno"></textarea>
               </div>
             </div>
           </div>
-
-
-
-
           <button (click)="save()" [disabled]="saving" class="btn btn-primary btn-xs">{{saving ===true ?
             'Guardando...':'Continuar'}}</button>
         </div>

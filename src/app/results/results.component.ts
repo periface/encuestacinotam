@@ -21,15 +21,32 @@ export class ResultsComponent implements OnInit {
       .subscribe(data => {
         data.forEach((elm: any) => {
           // tslint:disable-next-line:forin
-          console.log(elm.Areas);
           this.buildFrecuencies(elm);
           this.buildFrecuenciesEsp(elm);
           this.results.push(elm);
         });
-
+        this.frecuencies.forEach(elm => {
+          console.log(elm);
+          const index = elm.frecuencies.findIndex(a => a.name === 'Otro');
+          console.log(index);
+          this.frecuencies.splice(index, 1);
+        });
         console.log('frecuencias', this.frecuencies);
         console.log('frecuencias esp', this.frecuenciesEsp);
       });
+  }
+  getDesafio(item) {
+    console.log(item.Desafio);
+    if (item.Desafio) {
+      return item.Desafio;
+    }
+    return 1;
+  }
+  fixValue(item, property, defValue) {
+    if (item[property]) {
+      return item[property];
+    }
+    return defValue;
   }
   private buildFrecuencies(elm) {
     let frecuencyObject;
@@ -49,17 +66,17 @@ export class ResultsComponent implements OnInit {
           const found = frecuenciesForArea.frecuencies.find(
             a => a.name === element.name
           );
-          if (found && found.name === 'Otro' && found.value === '') {
-            continue;
-          }
-          if (found) {
+          if (found && found.name !== 'Otro') {
             found.count = found.count + 1;
           } else {
-            frecuenciesForArea.frecuencies.push({
-              name: element.name,
-              count: 1,
-              otherValue: element.name === 'Otro' ? element.value : ''
-            });
+            if (found && found.name === 'Otro') {
+              continue;
+            } else {
+              frecuenciesForArea.frecuencies.push({
+                name: element.name,
+                count: 1
+              });
+            }
           }
         }
       } else {
@@ -72,19 +89,20 @@ export class ResultsComponent implements OnInit {
           const found = frecuencyObject.frecuencies.find(
             a => a.name === element.name
           );
-          if (found && found.name === 'Otro' && found.value === '') {
-            continue;
-          }
-          if (found) {
+          if (found && found.name !== 'Otro') {
             found.count = found.count + 1;
           } else {
-            frecuencyObject.frecuencies.push({
-              name: element.name,
-              count: 1
-            });
+            if (found && found.name === 'Otro') {
+              console.log('encontrado otro', found);
+              continue;
+            } else {
+              frecuencyObject.frecuencies.push({
+                name: element.name,
+                count: 1
+              });
+            }
           }
         }
-
         this.frecuencies.push(frecuencyObject);
       }
     }
@@ -102,14 +120,13 @@ export class ResultsComponent implements OnInit {
       );
 
       if (frecuenciesForArea) {
-        console.log(area);
         if (area.elements) {
           for (let indexGrp = 0; indexGrp < area.elements.length; indexGrp++) {
             const element = area.elements[indexGrp];
             const found = frecuenciesForArea.frecuencies.find(
               a => a.name === element.name
             );
-            if (found && found.name === 'Otro' && found.value === '') {
+            if (found && found.name === 'Otro') {
               continue;
             }
             if (found) {
@@ -117,8 +134,7 @@ export class ResultsComponent implements OnInit {
             } else {
               frecuenciesForArea.frecuencies.push({
                 name: element.name,
-                count: 1,
-                otherValue: element.name === 'Otro' ? element.value : ''
+                count: 1
               });
             }
           }
@@ -133,7 +149,7 @@ export class ResultsComponent implements OnInit {
           const found = frecuencyObject.frecuencies.find(
             a => a.name === element.name
           );
-          if (found && found.name === 'Otro' && found.value === '') {
+          if (found && found.name === 'Otro') {
             continue;
           }
           if (found) {

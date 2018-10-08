@@ -39,4 +39,7 @@
   DocumentoTitulo: string;
   Promedio: string;
   Sector: string;
+  EspecieAnimalInteres: string;
+  AreaInteresPosgrado: string;
+  EspecieAnimalInteresEsp: string;
 }
